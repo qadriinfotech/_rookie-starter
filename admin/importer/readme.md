@@ -2,7 +2,7 @@
 
 This is a script helps you to include a great `one-click demo` option to your theme.
 
-* A test dummy content from [Theme_Unit_Test](http://codex.wordpress.org/Theme_Unit_Test) added in `data` folder
+Note: A test dummy content from [Theme_Unit_Test](http://codex.wordpress.org/Theme_Unit_Test) added in `data` folder
 
 * To add your dummy content, simply export your data to `.xml` format and compress it to `.gz` format by [7z software](http://www.7-zip.org/7z.html).
 * Rename the compressed file to `sample-data.gz` and replace the default one in `data` folder.
