@@ -1,0 +1,23 @@
+/*Theme Name: Rookie Startar
+Theme URI: http://rookie.croti.com/starter/
+Author: Abukwaik
+Author URI: http://www.croti.com/
+Description: Fully Responsive Startar WordPress Theme based on twitter bootstrap.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rookie
+Tags: fluid-layout, responsive-layout, theme-options, translation-ready, custom-menu
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* This is just to make theme check happy */
+.wp-caption{}
+.wp-caption-text{}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{}
+.alignleft{}
+.aligncenter{}
