@@ -16,8 +16,8 @@ if( ! function_exists('rookie_pagination')) {
 		$defaults = array(
 			'range' => 4,
 			'custom_query' => FALSE,
-			'previous_string' => __( '<i class="glyphicon glyphicon-chevron-left"></i>', 'rookie' ),
-			'next_string' => __( '<i class="glyphicon glyphicon-chevron-right"></i>', 'rookie' ),
+			'previous_string' => __( '<i class="fa fa-chevron-left"></i>', 'rookie' ),
+			'next_string' => __( '<i class="fa fa-chevron-right"></i>', 'rookie' ),
 			'before_output' => '<div class="post-nav"><ul class="pager">',
 			'after_output' => '</ul></div>'
 			);
