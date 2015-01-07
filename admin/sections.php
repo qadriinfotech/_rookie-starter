@@ -611,6 +611,7 @@ $this->sections[] = array(
                 'font-weight'   => '300', 
                 'font-family'   => 'Open Sans',
                 'font-size'     => '14px',
+                'color'     => '#333',
                 ),
             'preview' => array(
                 'always_display'=> true,
