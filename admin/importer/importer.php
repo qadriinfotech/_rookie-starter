@@ -22,7 +22,7 @@ function rookie_importer() {
 
       $importer = new WP_Import(); //ai kalam
       /* Import Posts, Pages, Portfolio Content, FAQ, Images, Menus */
-      $theme_xml = get_template_directory() . '/admin/importer/data/sample-data.xml';
+      $theme_xml = get_template_directory() . '/admin/importer/data/sample-data.gz';
       $importer->fetch_attachments = true;
       ob_start();
       $importer->import($theme_xml);
