@@ -1,6 +1,6 @@
 ## Usage
 
-This is a script helps you to include a great "one-click demo" option to your theme.
+This is a script helps you to include a great `one-click demo` option to your theme.
 
 * A test dummy content from [Theme_Unit_Test](http://codex.wordpress.org/Theme_Unit_Test) added in `data` folder
 
