@@ -743,7 +743,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						'tgmpa_notice_action_links',
 						array(
 							'install'  => ( current_user_can( 'install_plugins' ) ) ? $show_install_link : '',
-							'update'  => ( current_user_can( 'install_plugins' ) ) ? $show_update_link : '',
 							'activate' => ( current_user_can( 'activate_plugins' ) ) ? $show_activate_link : '',
 							'dismiss'  => '<a class="dismiss-notice" href="' . add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ) . '" target="_parent">' . __( 'Dismiss this notice', 'rookie' ) . '</a>',
 						)
