@@ -14,7 +14,7 @@
 // Primary Menu
 function main_nav() {
  wp_nav_menu(array(
-  'menu'              => 'primary',
+  'menu'              => 'Main Menu',
   'theme_location'    => 'primary',
 // 'depth'             => 3,
   'container'         => 'div',
