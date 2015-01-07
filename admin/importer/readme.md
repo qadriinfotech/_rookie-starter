@@ -15,6 +15,7 @@ Note: A test dummy content from [Theme_Unit_Test](http://codex.wordpress.org/The
 You can edit the default values in `importer.php` file
 
 * Chagne the import `file name` @ line 25
+* To import the data without images set `$importer->fetch_attachments` to `false` @ line 26
 * Change the `menu names` @ line 35
 * Chagne the `widget file name` @ line 49
 * Set `reading` options @ line 55
