@@ -31,6 +31,11 @@ img {
   height:auto
 }
 
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
 button,input,select,textarea {
   font-size:100%;
   margin:0;
