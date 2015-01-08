@@ -6,14 +6,14 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php Schema_Markup::schema_metadata( array( 'context' => 'entry' ) ); ?>>
+<article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="blog-item-wrap">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-			<?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured' )); ?>
+		<a <?php Schema_Markup::schema_metadata( array( 'context' => 'url' ) ); ?> href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+			<?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemtype' => 'http://schema.org/ImageObject', 'itemscope' => 'itemscope' )); ?>
 		</a>
 		<div class="post-inner-content">
 			<header class="entry-header">
-				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"<?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?>><?php the_title(); ?></a></h2>
+				<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<?php if ( 'post' == get_post_type() ) : ?>
 					<div class="entry-meta">
 						<span class="sticky-star"><i class="fa fa-star" style="color:"></i><?php echo __( 'sticky post', 'rookie' ); ?></span>

@@ -20,7 +20,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 } ?>
 
 <div class="row-fluid">      
-	<div id="primary" class="content-area <?php echo $col; ?>">
+	<div <?php Schema_Markup::schema_metadata( array('context' => 'body' )); ?> id="primary" class="content-area <?php echo $col; ?>">
 		<?php if ( have_posts() ) : ?>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>

@@ -19,10 +19,10 @@ function rookie_breadcrumb_lists() {
     $currentBefore = '<span class="current">';
     $currentAfter = '</span>';
 
-    echo '<div class="breadcrumb-list">';
+    echo '<div class="breadcrumb-list" itemprop="breadcrumb">';
     global $post;
     $home = home_url();
-    echo '<a href="' . $home . '">' . $name . '</a> ';
+    echo '<a href="' . $home . '" itemprop="url">' . $name . '</a> ';
     if (!is_home())
       echo $chevron . ' ';
     if (is_category()) {

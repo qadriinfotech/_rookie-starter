@@ -43,6 +43,12 @@ class Schema_Markup {
 				$attributes['itemtype']  = 'http://schema.org/WPHeader';
 			break;
 
+			case 'breadcrumb':
+				$attributes['itemscope'] = 'itemscope';
+
+				$attributes['itemtype']  = 'http://schema.org/breadcrumb';
+			break;
+
 			case 'nav':
 				$attributes['role']      = 'navigation';
 				$attributes['itemscope'] = 'itemscope';
@@ -56,7 +62,7 @@ class Schema_Markup {
 				// Frontpage, Blog, Archive & Single Post
 				if ( is_singular( 'post' ) || is_archive() || is_home() ) {
 					$attributes['itemscope'] = 'itemscope';
-					$attributes['itemtype']  = 'http://schema.org/Blog';
+					$attributes['itemtype']  = 'http://schema.org/WebPageElement';
 				}
 
 				// Search Results Pages
@@ -93,6 +99,11 @@ class Schema_Markup {
 
 			case 'name':
 				$attributes['itemprop'] = 'name';
+			break;
+
+			case 'ContactPoint':
+				$attributes['itemscope'] = 'itemscope';
+				$attributes['itemtype']  = 'http://schema.org/ContactPoint';
 			break;
 
 			case 'email':

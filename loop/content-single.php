@@ -6,7 +6,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php Schema_Markup::schema_metadata( array( 'context' => 'entry' ) ); ?>>
+<article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
 	$full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
 	$img_src= $full_img[0];
@@ -16,7 +16,7 @@
 	</a>
 	<div class="post-inner-content">
 		<header class="entry-header">
-			<h2 class="entry-title"<?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?>><?php the_title(); ?></h2>
+			<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><?php the_title(); ?></h2>
 			<div class="entry-meta">
 				<?php rookie_posted_on(); ?>
 				<?php edit_post_link( __( 'Edit', 'rookie' ), '<span class="edit-link pull-right">', ' <i class="fa fa-pencil"></i></span>' ); ?>
@@ -79,15 +79,7 @@
 	</div> <!-- post-inner-content -->
 </article>
 <?php if(ro_get_option ('blog_author_bio')) { ?>
-	<div id="author-info" class="clearfix">
-		<h4 class="recent-title"><?php echo __('About the Author', 'rookie'); ?></h4>
-		<div class="about_author">
-			<?php echo get_avatar(get_the_author_meta('ID') , '60'); ?><span <?php Schema_Markup::schema_metadata( array( 'context' => 'comment_author' ) ); ?>><?php the_author_posts_link(); ?></span><br />
-			<p class="author-description">
-				<?php echo get_the_author_meta('description'); ?>
-			</p>
-		</div> <!-- end author -->
-	</div>
+	<?php get_template_part( 'loop/content', 'author' ); ?>
 <?php } ?>
 
 

@@ -31,9 +31,9 @@ else window.addEventListener('load', cb);
 <?php $logo_url = ro_get_option('logo_custom_url') ? ro_get_option('logo_custom_url') : home_url( '/' ); $logo = ro_get_option('logo') ?>
 <?php get_template_part( 'loop/top-header' ); ?>
 <?php if (ro_get_option('sticky_header')) { ?>
-<div id="wrap">
+<header id="wrap">
     <?php } ?> 
-    <nav class="navbar navbar-default" <?php Schema_Markup::schema_metadata( array( 'context' => 'nav' ) ); ?>>
+    <nav class="navbar navbar-default" >
         <div class="container clearfix">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -61,12 +61,11 @@ else window.addEventListener('load', cb);
             <?php main_nav(); ?>
         </div>  <!-- navbar navbar-default -->
     </nav> <!-- container -->
-</div>  <!-- wrap -->
+</header>  <!-- wrap -->
 <?php if( !is_front_page()) { ?>
 <?php get_template_part( 'loop/sub-header'); ?>
 <?php } ?>
-<div id="main"<?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?>>
-    <div id="content" class="site-content"> 
+    <main id="content" class="site-content" <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?>> 
         <div class="main-content-area">
             <div class="container-fluid clearfix">
 

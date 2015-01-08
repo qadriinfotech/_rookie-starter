@@ -93,7 +93,7 @@ if ( ! function_exists( 'rookie_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function rookie_posted_on() {
-	$time_string = '<time class="entry-date published" '.Schema_Markup::schema_metadata( array( 'context' => 'entry_time', 'echo' => false )).'>%2$s</time>';
+	$time_string = '<time class="entry-date published" ' . Schema_Markup::schema_metadata( array( 'context' => 'entry_time', 'echo' => false )) . '>%2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -120,9 +120,9 @@ function rookie_posted_on() {
 		$time_string .= __(', <span class="updated-on"><i class="fa fa-refresh"></i> updated on</span>', 'rookie') . $time_string_update;
 	}
 
-	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Published on %1$s</span><span class="byline"> by <i class="fa fa-user"></i> %2$s</span>', 'rookie' ),
+	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Published on %1$s</span><span ' . Schema_Markup::schema_metadata( array( 'context' => 'author', 'echo' => false )) . ' class="byline"> by <i class="fa fa-user"></i> %2$s</span>', 'rookie' ),
 		$time_string,
-		sprintf( '<span class="author vcard"'.Schema_Markup::schema_metadata( array( 'context' => 'author_name', 'echo' => false )).'><a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a></span>',
+		sprintf( '<span ' . Schema_Markup::schema_metadata( array( 'context' => 'author_name', 'echo' => false )) . ' class="author vcard"><a ' . Schema_Markup::schema_metadata( array( 'context' => 'url', 'echo' => false )) . ' class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'rookie' ), get_the_author() ) ),
 			esc_html( get_the_author() )

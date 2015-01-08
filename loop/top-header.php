@@ -10,9 +10,9 @@
 
 <?php if (ro_get_option('hide_top_header')) { ?>
     <header id="top-bar-wrap" <?php Schema_Markup::schema_metadata( array( 'context' => 'header' ) ); ?>>
-        <div id="top-bar"> 
+        <div id="top-bar" <?php Schema_Markup::schema_metadata( array( 'context' => 'ContactPoint' ) ); ?>> 
             <div class="container clearfix">
-                <div class="top-bar-left" id="top-bar-content">
+                <div class="top-bar-left" id="top-bar-content" itemprop="contactType">
                     <?php $phone_text = ro_get_option('phone_text');
                     if (!empty ($phone_text) && ro_get_option('phone_text')) { ?>
                     <span <?php Schema_Markup::schema_metadata( array( 'context' => 'telephone' ) ); ?>>
