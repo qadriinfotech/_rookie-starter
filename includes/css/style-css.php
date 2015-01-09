@@ -456,12 +456,9 @@ embed,iframe,object {
 }
 
 .gallery-item {
-  float:left;
-  margin:0 4px 4px 0;
   overflow:hidden;
   position:relative;
   text-align:center;
-  opacity:0
 }
 
 .gallery-columns-2 .gallery-item {
