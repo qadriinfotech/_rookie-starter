@@ -44,9 +44,9 @@ $this->sections[] = array(
         array(
             'id'       => 'cloudflare_compatibility',
             'type'     => 'switch',
-            'title'    => __('Cloudflare Compatibility', 'rookie'),
-            'subtitle' => __('If you going to use CouldFlare check this off', 'rookie'),
-            'desc'     => __('This will disable our <a href="'. esc_url('https://developers.google.com/speed/docs/insights/BlockingJS') .'" target="_blank">JavaScript Asynchronous</a> which is conflicted with Cloudflare (Rocket Loader).', 'rookie'),
+            'title'    => __('Defer loading of JavaScript', 'rookie'),
+            'subtitle' => __('Enable defer parsing for javascript by adding "defer" attribute', 'rookie'),
+            'desc'     => __('Improve your page loading time by allowing javascript <a href="'. esc_url('https://developers.google.com/speed/docs/insights/BlockingJS') .'" target="_blank">JavaScript Asynchronous</a>', 'rookie'),
             'default'  => false
             ),
         array(
