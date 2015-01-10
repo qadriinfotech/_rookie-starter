@@ -6,7 +6,6 @@
  * @since rookie 1.0
  */
 
-
 	$protocol = isset( $_SERVER['https'] ) ? 'https://' : 'http://';
 	$rookie_ajax_url = admin_url( 'admin-ajax.php', $protocol );
 ?>

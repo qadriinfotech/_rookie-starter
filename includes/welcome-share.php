@@ -4,7 +4,7 @@
  * @since rookie 1.0
  */
 
-	$theme_url = 'http://rookie.croti.com';
+	$theme_url = 'http://starter.croti.com';
 	$theme_title = 'Rookie - Responsive Starter Theme';
 ?>
 <?php if(!empty($theme_url) && !empty($theme_title)) : ?>

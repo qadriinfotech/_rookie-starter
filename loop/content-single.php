@@ -7,9 +7,15 @@
 ?>
 
 <article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<a <?php Schema_Markup::schema_metadata( array( 'context' => 'url' ) ); ?> href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-		<?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemtype' => 'http://schema.org/ImageObject', 'itemscope' => 'itemscope' )); ?>
-	</a>
+	<?php 
+	$full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
+	$img_src= $full_img[0];
+	?>
+	<div itemscope="itemscope" itemtype='http://schema.org/ImageObject'>
+	  <a href="<?php echo $img_src; ?>" itemprop="contentUrl" title="<?php the_title_attribute(); ?>">
+	    <?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
+	  </a>
+	</div>
 	<div class="post-inner-content">
 		<header class="entry-header">
 			<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><?php the_title(); ?></h2>

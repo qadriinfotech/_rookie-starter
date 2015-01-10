@@ -8,10 +8,9 @@
  * @since rookie 1.0
  */
 ?>
-           </div> <!-- container -->
-        </div><!--/.main-content-area-->
-    </main><!--/#content-->
-
+        </div> <!-- container -->
+    </div><!--/.main-content-area-->
+</main><!--/#content-->
 <?php if(ro_get_option('footer_display')) : ?>
     <footer class="footer-wrapper">
         <div class="container-fluid clearfix">  

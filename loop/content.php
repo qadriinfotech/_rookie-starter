@@ -8,9 +8,11 @@
 
 <article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="blog-item-wrap">
-		<a <?php Schema_Markup::schema_metadata( array( 'context' => 'url' ) ); ?> href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-			<?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemtype' => 'http://schema.org/ImageObject', 'itemscope' => 'itemscope' )); ?>
-		</a>
+		<div itemscope="itemscope" itemtype='http://schema.org/ImageObject'>
+		  <a href="<?php the_permalink(); ?>" itemprop="contentUrl" title="<?php the_title_attribute(); ?>">
+		    <?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
+		  </a>
+		</div>
 		<div class="post-inner-content">
 			<?php if ( 'post' == get_post_type() ) : ?>
 				<header class="entry-header">
