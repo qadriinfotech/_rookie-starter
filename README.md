@@ -15,7 +15,7 @@ Nothing special that much:
 * Custom search result
 * Custom Login
 * Post views
-* SEO optimized
+* 100% Search Engine Optimized
 * Page speed optimized score between 95-100/100 [link](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fstarter.croti.com%2F)
 * HTML5 validation ready [link](http://validator.w3.org/check?uri=http%3A%2F%2Fstarter.croti.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0)
 * CSS3
@@ -26,6 +26,7 @@ Nothing special that much:
 * 404 template
 * Animate.css
 * Font Awesome 4.2
+* Google Fonts
 
 And my special gift:
 
