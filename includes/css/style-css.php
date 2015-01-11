@@ -1,7 +1,7 @@
 /*!
  * Rookie Main Style v1.0
  */
- 
+
 .main-content-area {
   margin-bottom:50px;
   margin-top:50px

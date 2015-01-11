@@ -466,7 +466,7 @@ $this->sections[] = array(
             'type'      => 'switch',
             'title'     => __('Hide Default Widgets', 'rookie'),
             'subtitle'  => __('Check if you want to show the default widgets', 'rookie'),
-            'default'   => true,
+            'default'   => false,
             )
     )
 );

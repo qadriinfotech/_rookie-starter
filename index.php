@@ -22,6 +22,11 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 <div class="row-fluid">      
 	<div <?php Schema_Markup::schema_metadata( array('context' => 'body' )); ?> id="primary" class="content-area <?php echo $col; ?>">
 		<?php if ( have_posts() ) : ?>
+			<?php if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+			<?php endif; ?>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 		<?php

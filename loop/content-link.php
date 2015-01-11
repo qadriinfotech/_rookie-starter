@@ -1,47 +1,54 @@
 <?php
 /**
- * @package Rookie Content single
- * @since 1.0
+ * The template for displaying link post formats
  *
+ * Used for both single and index/archive/search.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
  */
 ?>
 
 <article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
-	$full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
-	$img_src= $full_img[0];
-	?>
+	
 	<div itemscope="itemscope" itemtype='http://schema.org/ImageObject'>
-	  <a href="<?php echo $img_src; ?>" itemprop="contentUrl" title="<?php the_title_attribute(); ?>">
-	    <?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
-	  </a>
+	  <a href="<?php the_permalink(); ?>" itemprop="contentUrl" title="<?php the_title_attribute(); ?>"></a>
+	  <?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
 	</div>
-	<div class="post-inner-content">
-		<header class="entry-header">
-			<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><?php the_title(); ?></h2>
-			<div class="entry-meta">
-				<?php rookie_posted_on(); ?>
-				<?php edit_post_link( __( 'Edit', 'rookie' ), '<span class="edit-link pull-right">', ' <i class="fa fa-pencil"></i></span>' ); ?>
-			</div>
-		</header>
-		<div class="entry-content">
-			<div class="the-content"<?php Schema_Markup::schema_metadata( array( 'context' => 'entry_content' ) ); ?>>
-			<?php the_content(); ?>
-				<?php
-					wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'rookie' ) . ' </span>%',
-					'separator'   => '<span class="screen-reader-text">, </span>',
-					) );
-				?>
-	    	</div>
-	    	<?php if (ro_get_option ('post_socials')) { ?>
-	    	<?php social_media(); ?> 
-	    	<?php } ?>
-		</div><!-- .entry-content -->
+
+	<header class="entry-header">
+		<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><?php the_title(); ?></h2>
+	</header><!-- .entry-header -->
+	<!-- .entry-header -->
+
+	<div class="entry-content">
+		<?php
+			/* translators: %s: Name of current post */
+			the_content( sprintf(
+				__( 'Continue reading %s', 'rookie' ),
+				the_title( '<span class="screen-reader-text">', '</span>', false )
+			) );
+
+			wp_link_pages( array(
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie' ) . '</span>',
+				'after'       => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'rookie' ) . ' </span>%',
+				'separator'   => '<span class="screen-reader-text">, </span>',
+			) );
+		?>
+	</div>
+	<!-- .entry-content -->
+
+	<?php
+		// Author bio.
+		if ( is_single() && get_the_author_meta( 'description' ) ) :
+			get_template_part( 'loop/content', 'author' );
+		endif;
+	?>
+
 		<footer class="entry-footer">
 			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 				<?php
@@ -78,13 +85,6 @@
 				<?php echo getPostViews(get_the_ID()); ?>
 			</span>
 		</footer>
-	</div> <!-- post-inner-content -->
-</article>
-<?php if(ro_get_option ('blog_author_bio')) { ?>
-	<?php get_template_part( 'loop/content', 'author' ); ?>
-<?php } ?>
+	<!-- .entry-footer -->
 
-
-
-
-
+</article><!-- #post-## -->

@@ -52,6 +52,14 @@ if( !class_exists( 'ReduxFramework_color_rgba' ) ) {
             $this->field    = $field;
             $this->value    = $value;
 
+            $defaults = array(
+                'color'     => '',
+                'alpha'     => 1,
+                'rgba'      => ''
+            );
+
+            $this->value = wp_parse_args( $this->value, $defaults );
+
             $this->field['options']['show_input']              = isset($this->field['options']['show_input']) ? $this->field['options']['show_input'] : true;
             $this->field['options']['show_initial']            = isset($this->field['options']['show_initial']) ? $this->field['options']['show_initial'] : false;
             $this->field['options']['show_alpha']              = isset($this->field['options']['show_alpha']) ? $this->field['options']['show_alpha'] : true;
@@ -82,13 +90,6 @@ if( !class_exists( 'ReduxFramework_color_rgba' ) ) {
          * @return      void
          */
         public function render() {
-            $defaults = array(
-                'color'     => '#000000',
-                'alpha'     => 1,
-                'rgba'      => ''
-            );
-            
-            $this->value = wp_parse_args($this->value, $defaults);
             
             $field_id = $this->field['id'];
             
@@ -187,15 +188,6 @@ if( !class_exists( 'ReduxFramework_color_rgba' ) ) {
                 true
             );
 
-            // Spectrum CSS
-            wp_enqueue_style(
-                'redux-spectrum-css', 
-                ReduxFramework::$_url . 'assets/css/vendor/spectrum/redux-spectrum.css',
-                array(),
-                time(), 
-                'all'
-            );
-            
             // Field dependent JS
             wp_enqueue_script(
                 'redux-field-color-rgba-js', 
@@ -204,16 +196,19 @@ if( !class_exists( 'ReduxFramework_color_rgba' ) ) {
                 time(), 
                 true
             );
-
-            redux_enqueue_style(
-                $this->parent,
-                'redux-field-color-rgba-css',
-                ReduxFramework::$_url . 'inc/fields/color_rgba/field_color_rgba.css',
-                ReduxFramework::$_dir . 'inc/fields/color_rgba',
-                array(),
-                time(),
-                false
-            );
+            
+            // Spectrum CSS
+            wp_enqueue_style('redux-spectrum-css');
+            
+            if ($this->parent->args['dev_mode']) {
+                wp_enqueue_style(
+                    'redux-field-color-rgba-css',
+                    ReduxFramework::$_url . 'inc/fields/color_rgba/field_color_rgba.css',
+                    array(),
+                    time(),
+                    'all'
+                );
+            }
         }
 
         /**

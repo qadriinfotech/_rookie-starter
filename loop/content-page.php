@@ -7,31 +7,31 @@
  */
 ?>
 
-<?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured' )); ?>
+<article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php 	if ( is_single() || is_page() || is_attachment() ) :
-		the_title( '<h2 class="page-title">', '</h2>' );
-		else :
-			the_title( '<h2 class="page-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif; ?>
-		<?php if( 'post' == get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php rookie_posted_on(); ?>
-				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<?php endif; ?>
-			</div>
-		<?php endif; ?>
-	</header>
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages( 
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'rookie' ),
-				'after'  => '</div>',
-				) 
-			);
-		?>
+	<div itemscope="itemscope" itemtype='http://schema.org/ImageObject'>
+	  <a href="<?php the_permalink(); ?>" itemprop="contentUrl" title="<?php the_title_attribute(); ?>"></a>
+	  <?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
 	</div>
-</article>
+
+	<header class="entry-header">
+		<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><?php the_title(); ?></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content" <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_content' ) ); ?>>
+		<?php the_content(); ?>
+		<?php
+			wp_link_pages( array(
+			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie' ) . '</span>',
+			'after'       => '</div>',
+			'link_before' => '<span>',
+			'link_after'  => '</span>',
+			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'rookie' ) . ' </span>%',
+			'separator'   => '<span class="screen-reader-text">, </span>',
+			) );
+		?>
+	</div><!-- .entry-content -->
+
+	<?php edit_post_link( __( 'Edit', 'rookie' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
+
+</article><!-- #post-## -->
