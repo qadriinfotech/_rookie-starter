@@ -58,8 +58,7 @@
         ) . '</p>',
 
       'comment_notes_before' => '<p class="text text-warning">' .
-        __( 'Note: Your email address will not be published', 'rookie' ) . ( $req ? $required_text : '' ) .
-        '</p>',
+        __( 'Note: Your email address will not be published', 'rookie' ).'</p>',
 
       'comment_notes_after' => '</div><p class="form-allowed-tags">' .
         sprintf(
@@ -75,13 +74,13 @@
           '<div class="row"><div class="col-md-6 col-xs-6">' .
           '<div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>'.
           '<input class="form-control" placeholder="Your name" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-          '" size="30"' . $aria_req . ' /></div>' .
+          '" size="30" aria-required="true" /></div>' .
           '</div>',
         'email' =>
           '<div class="col-md-6 col-xs-6">' .
           '<div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i> </span>'.
           '<input class="form-control" placeholder="Your email" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-          '" size="30"' . $aria_req . ' /></div>'.
+          '" size="30" aria-required="true"  /></div>'.
           '</div></div>',
         'url' => ''
         )
