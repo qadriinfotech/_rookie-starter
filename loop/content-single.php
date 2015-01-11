@@ -8,7 +8,7 @@
 
 <article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
-	$full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
+	$full_img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full-size');
 	$img_src= $full_img[0];
 	?>
 	<div itemscope="itemscope" itemtype='http://schema.org/ImageObject'>

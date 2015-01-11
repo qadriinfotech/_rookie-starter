@@ -74,6 +74,13 @@ add_action( 'after_setup_theme', 'rookie_setup' );
 
 
 /**
+    Getting post thumbnail url
+ */
+function rookie_get_thumb_url($pots_ID){
+  return wp_get_attachment_url( get_post_thumbnail_id( $pots_ID ) );
+}
+
+/**
     Show welcome message and tips
 */
 function rookie_welcome_msg() {

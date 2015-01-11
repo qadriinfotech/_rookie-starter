@@ -1439,3 +1439,14 @@ ol.unstyled,ul.unstyled {
     padding:10px
   }
 }
+
+ul.list.arrow.unstyled {
+  padding-left: 10px
+}
+
+ul.list.arrow.unstyled li:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  margin-right: 5px;
+  color: green
+}
