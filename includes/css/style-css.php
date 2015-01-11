@@ -1162,6 +1162,10 @@ embed,iframe,object {
   margin-bottom:20px
 }
 
+.tagcloud {
+  padding: 10px
+}
+
 .cat-count-span {
   float:right;
   color:#777
@@ -1450,3 +1454,4 @@ ul.list.arrow.unstyled li:before {
   margin-right: 5px;
   color: green
 }
+
