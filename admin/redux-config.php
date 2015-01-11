@@ -169,13 +169,13 @@
                 $this->args['help_tabs'][] = array(
                     'id'      => 'redux-help-tab-1',
                     'title'   => __( 'Documentation', 'rookie' ),
-                    'content' => __( '<p>Go to <a href="' . esc_url(__('http://www.croti.com/starter', 'rookie')) . '" target="_blank">Rookie Documentation</a> to learn more about rookie features.</p>', 'rookie' )
+                    'content' => __( '<p>Go to <a href="' . esc_url(__('http://www.croti.com/starter.html', 'rookie')) . '" target="_blank">Rookie Documentation</a> to learn more about rookie features.</p>', 'rookie' )
                 );
 
                 $this->args['help_tabs'][] = array(
                     'id'      => 'redux-help-tab-2',
                     'title'   => __( 'Issues tracker', 'rookie' ),
-                    'content' => __( '<p>If you have any issue do not hesitate to join the <a href="' . esc_url(__('https://github.com/abukwaik/rookie/issues', 'rookie')) . '" target="_blank">issues tracker</a></p>', 'rookie' )
+                    'content' => __( '<p>If you have any issue do not hesitate to join the <a href="' . esc_url(__('https://github.com/abukwaik/_rookie-starter/issues', 'rookie')) . '" target="_blank">issues tracker</a></p>', 'rookie' )
                 );
 
                 // Set the help sidebar
