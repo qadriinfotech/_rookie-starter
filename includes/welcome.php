@@ -35,10 +35,10 @@
 <h3>Start using Rookie</h3>
 <ul>
 	<li>
-		Refer to <a href="<?php echo esc_url('http://www.croti.com/starter'); ?>" target="_blank">Rookie Documentation</a> to learn more about rookie features.
+		Refer to <a href="<?php echo esc_url('http://www.croti.com/starter.html'); ?>" target="_blank">Rookie Documentation</a> to learn more about rookie features.
 	</li>
 	<li>
-		If you have any issue do not hesitate to join the <a href="<?php echo esc_url('https://github.com/abukwaik/rookie/issues'); ?>" target="_blank">issues tracker</a>
+		If you have any issue do not hesitate to join the <a href="<?php echo esc_url('https://github.com/abukwaik/_rookie-starter/issues'); ?>" target="_blank">issues tracker</a>
 	</li>
 	<li>
 		Donate again! ^_^
