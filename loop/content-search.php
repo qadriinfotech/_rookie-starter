@@ -6,7 +6,7 @@
  */
 ?>
 
-<article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 	</header>
@@ -24,12 +24,13 @@
 			the_excerpt(); ?>
 		<?php }
             wp_link_pages( array(
-                'before'            => '<div class="page-links">'.__( 'Pages:', 'rookie' ),
-                'after'             => '</div>',
-                'link_before'       => '<span>',
-                'link_after'        => '</span>',
-                'pagelink'          => '%',
-                'echo'              => 1
+                wp_link_pages( array(
+                'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie' ) . '</span>',
+                'after'       => '</div>',
+                'link_before' => '<span>',
+                'link_after'  => '</span>',
+                'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'rookie' ) . ' </span>%',
+                'separator'   => '<span class="screen-reader-text">, </span>',
                 ) );
             ?>
         </div>
