@@ -17,13 +17,14 @@ get_header(); ?>
 							<div class="error-message"><?php echo __( 'Error 404', 'rookie' ); ?></div>
 							<p class="lead"><?php echo __( 'It looks like nothing was found at this location.', 'rookie' ); ?></p>
 							<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />
-							<br><br>
-							<p class=""><?php echo __( 'Or maybe try one of the links below or a search?', 'rookie' ); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="container clearfix">
 					<div class="row">
+						<span class="search-text">
+						<p><?php echo __( 'Or maybe try a search?', 'rookie' ); ?></p>
+						</span>
 						<?php get_search_form(); ?>
 					</div>
 					<br>

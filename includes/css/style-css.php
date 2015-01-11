@@ -146,16 +146,16 @@ img.aligncenter {
 }
 
 .error-404-box {
-  margin:0;
+  margin:0 0 50px;
   padding:0;
   text-align:center
 }
 
 .error-message {
-  font-size:50px;
-  font-weight:900;
+  font-size:40px;
   text-shadow:1px 1px 0 rgba(0,0,0,.12);
   color:#999;
+  margin:20px 0;
   padding:20px
 }
 
