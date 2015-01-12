@@ -1,14 +1,14 @@
 <?php
 
 /**
- * rookie - functions and definitions
+ * Rookie - setup functions and definitions
  * 
  * For more information on hooks, actions, and filters,
  * see http://codex.wordpress.org/Plugin_API
  * 
- * @package rookie - Bootstrap Theme Class 2014
- * @author 	Rookie Team
- * @copyright Copyright (c) 2014, Rookie Team
+ * @package rookie - Bootstrap Theme Class 2014 - 2015
+ * @author 	Abukwaik
+ * @copyright Copyright (c) 2014, Rookie
  * @since   rookie 1.0
  *
  */
@@ -124,13 +124,13 @@ function rookie_hide_welcome(){
 **/
 
 // Theme options
-require_once THEME_DIR . '/admin/options.php';
-require_once THEME_DIR . '/admin/helpers.php';
-
 if ( !class_exists( 'ReduxFramework' ) ) {
   require_once THEME_DIR . '/admin/redux-core/framework.php';
   require_once THEME_DIR . '/admin/redux-config.php';
 }
+
+require_once THEME_DIR . '/admin/options.php';
+require_once THEME_DIR . '/admin/helpers.php';
 
 // Importer
 include_once THEME_DIR . '/admin/importer/importer.php';
@@ -144,7 +144,7 @@ require_once THEME_DIR . '/admin/core/scripts.php';
 // Rookie Sidebars, widgets and menus
 require_once THEME_DIR . '/admin/core/register.php';
 
-// Custom functions
+// Custom functions & snippets
 require_once THEME_DIR . '/admin/core/clean.php';
 require_once THEME_DIR . '/admin/core/extra.php';
 require_once THEME_DIR . '/admin/core/jetpack.php';
@@ -155,17 +155,17 @@ require_once THEME_DIR . '/admin/core/custom-header.php';
 // Bootstrap Style Breadcrumbs
 require_once THEME_DIR . '/includes/breadcrumbs.php';
 
-// Load Bootstrap nav walker
+// Bootstrap nav walker
 require_once THEME_DIR . '/includes/bootstrap-walker.php';
 
-// Load Bootstrap Pagination
+// Bootstrap Pagination
 require_once THEME_DIR . '/includes/bootstrap-pagination.php';
 
-// Schema markup
+// Schema HTML markup
 require_once THEME_DIR . '/includes/markup.php';
 
 // Custom template tags
-require_once THEME_DIR . '/loop/template-tags.php';
+require_once THEME_DIR . '/includes/template-tags.php';
 
-// social share
+// Social share
 require_once THEME_DIR . '/includes/social-share.php';

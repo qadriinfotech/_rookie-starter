@@ -115,6 +115,7 @@ function rookie_wp_footer(){
 			/* ]]> */
 			</script>';
 	}
+
 	//Google Analytics (tracking)
 	if($ga = ro_get_option('ga')) {
 		echo $ga;
@@ -122,6 +123,9 @@ function rookie_wp_footer(){
 }
 add_action('wp_footer', 'rookie_wp_footer', 99);
 
+/**
+	Custom login
+*/
 /* Add custom Login logo */
 function rookie_login_logo() {
   $custom_login_logo = ro_get_option_media('custom_login_logo');

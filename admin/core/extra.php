@@ -9,7 +9,9 @@
  * 
  */
 
-// function to display number of posts.
+/**
+  function to display number of posts.
+*/
 function getPostViews($postID){
   $count_key = 'post_views_count';
   $count = get_post_meta($postID, $count_key, true);
@@ -49,14 +51,18 @@ function posts_custom_column_views($column_name, $id){
 add_filter('manage_posts_columns', 'posts_column_views');
 add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
 
-// Editor CSS
+/**
+  Editor CSS
+*/
   function custom_editor_style() {
     add_editor_style( CSS_URI . '/editor-style.css' );
   }
 add_action( 'init', 'custom_editor_style' );
 
 
-// Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+/**
+  Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+*/
 function rookie_enhanced_image_navigation( $url, $id ) {
   if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
    return $url;
@@ -69,7 +75,9 @@ function rookie_enhanced_image_navigation( $url, $id ) {
 }
 add_filter( 'attachment_link', 'rookie_enhanced_image_navigation', 10, 2 );
 
-// password protected post form 
+/**
+  password protected post form 
+*/
 function custom_password_form() {
   global $post;
   $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
@@ -78,7 +86,9 @@ function custom_password_form() {
 }
 add_filter( 'the_password_form', 'custom_password_form' );
 
-// Add Bootstrap classes for table
+/**
+  Add Bootstrap classes for table
+*/
 function add_custom_table_class( $content ) {
   return str_replace( '<table>', '<table class="table table-striped">', $content );
 }
@@ -137,9 +147,9 @@ function featured_image_in_feed( $content ) {
 }
 add_filter( 'the_content', 'featured_image_in_feed' );
 
-
-// if Disqus used:
-// Stop Disqus from outputting JS on anything but single posts or pages
+/**
+  Stop Disqus from outputting JS on anything but single posts or pages
+*/
 function custom_disqus_comments() {
   if ( is_singular( array( 'post', 'page' ) ) && comments_open() )
     return;
@@ -149,7 +159,9 @@ function custom_disqus_comments() {
 add_action( 'wp_head', 'custom_disqus_comments' );
 
 
-// Highlight keywords in search results within the_excerpt and the_title
+/** 
+  Highlight keywords in search results within the_excerpt and the_title
+*/
 function search_excerpt_highlight() {
   $excerpt = get_the_excerpt();
   $keys = implode('|', explode(' ', get_search_query()));
@@ -159,7 +171,9 @@ function search_excerpt_highlight() {
 add_filter('the_excerpt', 'search_excerpt_highlight');
 
 
-// Include password protected posts in search results
+/**
+  Include password protected posts in search results
+*/
 function include_password_posts_in_search( $search ) {
   global $wpdb;
   if( !is_user_logged_in() ) {    
@@ -171,7 +185,9 @@ function include_password_posts_in_search( $search ) {
 add_filter( 'posts_search', 'include_password_posts_in_search' );
 
 
-// set minimum comment length
+/** 
+  set minimum comment length
+*/
 function minimal_comment_length( $commentdata ) {
   $minimalCommentLength = 10; // minimum is 10 words
   if ( strlen( trim( $commentdata['comment_content'] ) ) < $minimalCommentLength ) {
@@ -182,23 +198,28 @@ function minimal_comment_length( $commentdata ) {
 add_filter( 'preprocess_comment', 'minimal_comment_length' );
 
 
-// Automatically spam comments with a long url
+/** 
+  Automatically spam comments with a long url
+*/
 function url_spam_check( $approved , $commentdata ) {
   return ( strlen( $commentdata['comment_author_url'] ) > 40 ) ? 'spam' : $approved;
 }
 add_filter( 'pre_comment_approved', 'url_spam_check', 99, 2 );
 
 
-// Add mp4, webm and ogv mimes for uploads
-if(!function_exists('rookie_add_upload_mimes')) {
-  function rookie_add_upload_mimes($mimes){ 
-    return array_merge($mimes, array ('mp4' => 'video/mp4', 'ogv' => 'video/ogg', 'webm' => 'video/webm')); 
-  }
+/** 
+  Add mp4, webm and ogv mimes for uploads
+*/
+
+function rookie_add_upload_mimes($mimes){ 
+  return array_merge($mimes, array ('mp4' => 'video/mp4', 'ogv' => 'video/ogg', 'webm' => 'video/webm')); 
 }
 add_filter('upload_mimes','rookie_add_upload_mimes');
 
 
-// Add a span into the WP categories widget count
+/** 
+  Add a span into the WP categories widget count
+*/
 if ( ! function_exists( 'cat_count_span' ) ) {
   function cat_count_span($links) {
     $links = str_replace('</a> (', '</a> <span class="cat-count-span">(', $links);
@@ -209,7 +230,9 @@ if ( ! function_exists( 'cat_count_span' ) ) {
 add_filter('wp_list_categories', 'cat_count_span');
 
 
-// This function modifies the main WordPress query to remove pages from search results.
+/** 
+  This function modifies the main WordPress query to remove pages from search results.
+*/
 function exclude_search_pages( $query ) {
   if ( $query->is_search ) {
     $query->set( 'post_type', 'post' );
@@ -219,7 +242,9 @@ function exclude_search_pages( $query ) {
 add_filter( 'pre_get_posts', 'exclude_search_pages' );
 
 
-// Defer parsing of JavaScript 
+/**
+  Defer parsing of JavaScript 
+*/
 if (!(is_admin()) && ro_get_option ('cloudflare_compatibility')==false) {
   function defer_parsing_of_js ( $url ) {
     if ( FALSE === strpos( $url, '.js' ) ) return $url;
@@ -229,10 +254,3 @@ if (!(is_admin()) && ro_get_option ('cloudflare_compatibility')==false) {
   }
   add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 }
-
-// Add more time for slow connection. it doesn't work in some hosts
-function theme_request_timeout(){
-  return 600; // Change this to your desired timeout value in ms
-}
-add_filter( 'http_request_timeout', 'theme_request_timeout', 100 );
-

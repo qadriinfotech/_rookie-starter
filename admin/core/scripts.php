@@ -27,7 +27,7 @@ function rookie_scripts() {
 
 	/**
 	* Style.css and bootstrap are loaded dynamicly. See admin/options.php
-	* Animate.css and fontawesome are deferred loading. See header.php
+	* Animate.css and fontawesome are combined into all.css and deferred loading. See header.php
 	* This technique made a huge improvements to page speed score 
 	* @since rookie 1.0
 	*/

@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Helpers and utils functions for theme use
+ * Helpers and utils functions related to redux theme option
  *
  * @package rookie
  * @since rookie 1.0

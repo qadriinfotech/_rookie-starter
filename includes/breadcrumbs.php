@@ -47,7 +47,6 @@ function rookie_breadcrumb_lists() {
       echo $currentBefore . get_the_time('Y') . $currentAfter;
     } elseif (is_single()) {
       $cat = get_the_category();
-      $cat = $cat[0];
       echo $currentBefore;
       the_title();
       echo $currentAfter;
