@@ -1107,8 +1107,8 @@ class WP_Import extends WP_Importer {
 	 * Added to http_request_timeout filter to force timeout at 60 seconds during import
 	 * @return int 60
 	 */
-	function bump_request_timeout() {
-		return 0;
+	function bump_request_timeout( $val ) {
+		return 60;
 	}
 
 	// return the difference in length between two strings
