@@ -1,2 +1,0 @@
-== Changelog ==
-initial release 1.0
