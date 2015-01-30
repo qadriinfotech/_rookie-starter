@@ -8,22 +8,22 @@ Nothing special that much:
 * Based on [bootstrap 3.3.2](http://twitter.github.com/bootstrap/)
 * Based on [bones](https://github.com/eddiemachado/bones)
 * 2 navigation menus (header-footer).
-* A powerful theme options panel based on [Redux framework](https://github.com/ReduxFramework/redux-framework) with tons of options.
+* A powerful theme option panel based on [Redux framework](https://github.com/ReduxFramework/redux-framework) with tons of options.
 * Custom CSS & JS
 * Pages slidebar
 * Custom headers
 * Custom search result
 * Custom Login
 * Post views
-* 100% Search Engine Optimized
-* Page speed optimized score between 95-100/100 [link](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fstarter.croti.com%2F)
+* 100% Search engine optimized
+* Page speed optimized, Score between 95-100/100 [link](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fstarter.croti.com%2F)
 * HTML5 validation ready [link](http://validator.w3.org/check?uri=http%3A%2F%2Fstarter.croti.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0)
 * CSS3
 * HTML Markup [schema-ready](https://support.google.com/webmasters/answer/99170?hl=en)
 * Post socials (default buttons)
 * Friendly SEO Breadcrumb
 * Pagination
-* 404 template
+* 404 Template
 * Animate.css
 * Font Awesome 4.3
 * Google Fonts
