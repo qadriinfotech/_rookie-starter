@@ -54,7 +54,6 @@ jQuery plugins:
 * [bones](https://github.com/eddiemachado/bones)
 * [Redux framework](https://github.com/ReduxFramework/redux-framework)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-* [FitVids](https://github.com/davatron5000/FitVids.js)
 * [jQuery Easing](https://github.com/gdsmith/jquery.easing)
 * [WOW.js](https://github.com/matthieua/WOW)
 * [jQuery nicescroll](https://github.com/inuyaksa/jquery.nicescroll)
