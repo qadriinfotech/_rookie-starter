@@ -42,7 +42,7 @@ jQuery plugins:
 
 
 ## Screenshot
-![screenshot](http://www.croti.com/images/rookie-starter-theme.png)
+![screenshot](http://www.croti.com/images/rookie-starter-wordpress-bootstrap.png)
 
 ## Demo
 [Demo](http://starter.croti.com/)
