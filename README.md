@@ -21,7 +21,7 @@ Nothing special that much:
 * CSS3
 * HTML Markup [schema-ready](https://support.google.com/webmasters/answer/99170?hl=en)
 * Post socials (default buttons)
-* Breadcrumbs
+* Friendly SEO Breadcrumb
 * Pagination
 * 404 template
 * Animate.css
