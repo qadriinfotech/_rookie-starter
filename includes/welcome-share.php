@@ -27,8 +27,8 @@
 	}(window, document, 'script'));
 </script> 
 <ul id="welcome_share">
-	<li class="twitter"><a class="twitter-share-button" data-count="horizontal" data-via="mekshq" data-text="<?php echo $theme_title; ?>" data-url="<?php echo $theme_url; ?>"></a></li>
-	<li class="facebook"><div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-href="<?php echo $theme_url.'?ref=meks'; ?>"></div></li>
+	<li class="twitter"><a class="twitter-share-button" data-count="horizontal" data-via="RookieTheme" data-text="<?php echo $theme_title; ?>" data-url="<?php echo $theme_url; ?>"></a></li>
+	<li class="facebook"><div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-href="<?php echo $theme_url.'?ref=RookieTheme'; ?>"></div></li>
 	<li class="gplus"><g:plusone size="medium" href="<?php echo $theme_url; ?>"></g:plusone></li>
 </ul>
 
