@@ -5,8 +5,9 @@
 *
 * @package rookie cleanup
 * @package bone
-* @link https://github.com/eddiemachado
-* @copyright Eddie Machado
+* @copyright Eddie Machado https://github.com/eddiemachado
+* @author Abukwaik http://www.croti.com
+* @link http://www.croti.com
 * @since rookie 1.0
 */
 

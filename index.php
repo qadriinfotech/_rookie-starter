@@ -9,8 +9,11 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package rookie index
- * @author Abukwaik
+ * @author Abukwaik http://www.croti.com
+ * @copyright Copyright (c) 2015, Rookie
+ * @link http://www.croti.com
  * @since rookie 1.0
+ *
  */
 
 get_header();

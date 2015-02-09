@@ -4,7 +4,9 @@
  * Contains the closing of the #content main and all content after
  *
  * @package rookie footer
- * @author Abukwaik
+ * @author Abukwaik http://www.croti.com
+ * @copyright Copyright (c) 2015, Rookie
+ * @link http://www.croti.com
  * @since rookie 1.0
  */
 ?>

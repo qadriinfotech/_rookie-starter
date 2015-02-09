@@ -3,7 +3,9 @@
  * The template for displaying 404 pages (not found).
  *
  * @package rookie 404
- * @author Abukwaik
+ * @author Abukwaik http://www.croti.com
+ * @copyright Copyright (c) 2015, Rookie
+ * @link http://www.croti.com
  * @since rookie 1.0
  *
  */
