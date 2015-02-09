@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rookie 1.0\n"
-"POT-Creation-Date: 2015-01-20 04:21+0200\n"
-"PO-Revision-Date: 2015-01-20 04:21+0200\n"
+"POT-Creation-Date: 2015-02-09 04:54-0500\n"
+"PO-Revision-Date: 2015-02-09 04:59-0500\n"
 "Last-Translator: \n"
 "Language-Team: Abukwaik <abukwaikabeer@gmail.com>\n"
 "Language: en_US\n"
@@ -234,52 +234,52 @@ msgstr ""
 msgid "Posts by %s"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/extra.php:72
-msgid "Views"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/extra.php:106
-msgid "This post is password protected. To view it please enter your password below:"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/extra.php:106
-msgid "Password:"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/extra.php:106
-msgid "Submit"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:76
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:89
 msgid "Sidebar"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:78
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:91
 msgid "The default sidebar, place widgets here will show in all posts"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:85
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:98
 msgid "Pages Sidebar"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:87
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:100
 msgid "The second sidebar, place widgets here will show in all pages"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:98
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:110
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:122
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:134
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:111
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:123
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:135
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:147
 msgid "Footer Widget 1"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:100
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:112
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:124
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:136
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:113
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:125
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:137
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:149
 msgid ""
 "The first Row of Footer Widgets, place widgets as per no. of footer widgets setting you set in "
 "Theme Options"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/snippets.php:72
+msgid "Views"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/snippets.php:106
+msgid "This post is password protected. To view it please enter your password below:"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/snippets.php:106
+msgid "Password:"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/snippets.php:106
+msgid "Submit"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/plugins-setup.php:61
@@ -309,12 +309,10 @@ msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/comments.php:15
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:214
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:19
 msgid "1 Comment"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/comments.php:15
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:19
 msgid "% Comments"
 msgstr ""
 
@@ -365,27 +363,35 @@ msgstr ""
 msgid "for"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:23
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/header.php:41
+msgid "Toggle navigation"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:25
 msgid "Full resolution"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:31
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:34
 msgid "<i class=\"fa fa-chevron-left\"></i> Previous"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:32
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:35
 msgid "Next <i class=\"fa fa-chevron-right\"></i>"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:49
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:34
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:51
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:30
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-audio.php:30
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-link.php:30
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:27
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-search.php:33
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:28
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-single.php:30
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content.php:34
 msgid "Pages:"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:55
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:155
+msgid "Page"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:57
@@ -404,35 +410,28 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:17
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:18
 msgid "Home"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:38
-msgid "Archive for category: &#39;"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:20
+msgid "Search Results for"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:95
-msgid "Search Results For:"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:21
+msgid "Tag"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:99
-msgid "Tag Archive for: &#39;"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:22
+msgid "Author"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:107
-msgid "Articles posted by: &#39;"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:23
+msgid "404"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:120
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:38
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-audio.php:34
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-link.php:34
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:31
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-search.php:37
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-single.php:34
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content.php:38
-msgid "Page"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:48
+msgid "Blog"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:26
@@ -468,8 +467,7 @@ msgid "Featured"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:134
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:21
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:37
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:39
 msgid "Edit"
 msgstr ""
 
@@ -522,7 +520,7 @@ msgstr ""
 msgid "You must specify the output you want - either \"link\" or \"post_content\"."
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome-share.php:11
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome-share.php:12
 msgid "Would you like to share?"
 msgstr ""
 
@@ -567,14 +565,10 @@ msgstr ""
 msgid "Hide this message"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:19
-msgid "Leave a comment"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:29
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:25
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-audio.php:25
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-link.php:25
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:22
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:23
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-single.php:25
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content.php:29
 #, php-format
@@ -585,28 +579,24 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-none.php:18
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-none.php:17
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-none.php:22
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-none.php:21
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-none.php:27
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-none.php:28
 msgid "It seems we did not find what you are looking for. Perhaps searching can help."
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-search.php:26
-msgid "Continue Reading &raquo;"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/search.php:21
 msgid " Search Results found for"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/searchform.php:11
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/searchform.php:12
 msgid "Search"
 msgstr ""

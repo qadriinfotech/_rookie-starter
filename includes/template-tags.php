@@ -4,8 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package rookie template tags
- * @package Twenty Fifteen 1.0
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */
 

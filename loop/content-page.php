@@ -1,8 +1,9 @@
 <?php
 /**
  *
- * @package The template used for displaying page content in page.php
- * @since 1.0
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
+ * @since rookie 1.0
  * 
  */
 ?>

@@ -3,7 +3,8 @@
 /**
  * HTML5 Schema Markup initialization.
  *
- * @package  rookie Schema Class
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */
 class Schema_Markup {

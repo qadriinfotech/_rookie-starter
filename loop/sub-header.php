@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * @package rookie sub header
- * @author Abukwaik
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */
 ?>

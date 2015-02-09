@@ -1,7 +1,7 @@
 <?php
 /**
- * @package rookie search
- * @author Abukwaik
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  *
  */

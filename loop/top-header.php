@@ -2,8 +2,8 @@
 /**
  * The top header area including text, phone, link and socials
  *
- * @package rookie top header
- * @author Abukwaik
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */
 ?>

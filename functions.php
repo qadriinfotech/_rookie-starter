@@ -6,7 +6,7 @@
  * For more information on hooks, actions, and filters,
  * see http://codex.wordpress.org/Plugin_API
  * 
- * @package rookie - Bootstrap Theme Class 2014 - 2015
+ * @package Rookie Startar
  * @author Abukwaik
  * @link https://github.com/abukwaik
  * @link http://www.croti.com/
@@ -73,6 +73,14 @@ if ( !function_exists( 'rookie_setup' ) ) {
 
 add_action( 'after_setup_theme', 'rookie_setup' );
 
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+  function theme_slug_render_title() {
+?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+  }
+  add_action( 'wp_head', 'theme_slug_render_title' );
+}
 
 /**
     Getting post thumbnail url

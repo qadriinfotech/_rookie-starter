@@ -1,9 +1,7 @@
 <?php
 /**
- * @package rookie comments form
+ * @package Rookie Startar
  * @author Abukwaik http://www.croti.com
- * @copyright Copyright (c) 2015, Rookie
- * @link http://www.croti.com
  * @since rookie 1.0
  */
 ?>
@@ -38,10 +36,10 @@
       'title_reply_to'    => __( 'Reply to %s', 'rookie' ),
       'cancel_reply_link' => __( 'Cancel Reply', 'rookie' ),
       'label_submit'      => __( 'Submit Comment', 'rookie' ),    
-      'must_log_in'       => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to submit a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>', 
-      'logged_in_as'      => '<p class="logged-in-as">' . sprintf( __( '<a href="%1$s" class="btn btn-success btn-sm"><i class="fa fa-user fa-fw"></i>%2$s</a> <a href="%3$s" title="Log out of this account" class="btn btn-primary btn-sm"><i class="fa fa-sign-out fa-fw"></i>Logout</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+      'must_log_in'       => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to submit a comment.', 'rookie' ), wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>', 
+      'logged_in_as'      => '<p class="logged-in-as">' . sprintf( __( '<a href="%1$s" class="btn btn-success btn-sm"><i class="fa fa-user fa-fw"></i>%2$s</a> <a href="%3$s" title="Log out of this account" class="btn btn-primary btn-sm"><i class="fa fa-sign-out fa-fw"></i>Logout</a>', 'rookie' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
       'comment_notes_before' => '<p class="text text-warning">' . __( 'Note: Your email address will not be published', 'rookie' ).'</p>',
-      'comment_notes_after'  => '</div><p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:' ), ' '  ) . '<br><code>' . allowed_tags() . '</code></p>',               
+      'comment_notes_after'  => '</div><p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'rookie' ), ' '  ) . '<br><code>' . allowed_tags() . '</code></p>',               
       'comment_field'        => '<div class="row"><div class="wpbs-textarea col-md-12">' . '<p>
 
       <textarea class="form-control" id="comment" name="comment" rows="8" aria-required="true" placeholder="Start commenting..."></textarea></p>' . '</div>' ,
@@ -68,9 +66,9 @@
 
   <?php if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks from comments
       $count = count($comments_by_type['pings']);
-      ($count !== 1) ? $txt = __('Pings&#47;Trackbacks','rookie') : $txt = __('Pings&#47;Trackbacks','rookie');
+      ($count !== 1) ? $txt = __('Pings&#47;Trackbacks', 'rookie') : $txt = __('Pings&#47;Trackbacks','rookie');
       ?>
-      <h4 id="pings"><?php echo $count . " " . $txt; ?> <?php _e('for','rookie'); ?> "<?php the_title(); ?>"</h4>
+      <h4 id="pings"><?php echo $count . " " . $txt; ?> <?php _e('for', 'rookie'); ?> "<?php the_title(); ?>"</h4>
       <ol class="commentlist">
           <?php wp_list_comments('type=pings&max_depth=<em>'); ?>
       </ol>

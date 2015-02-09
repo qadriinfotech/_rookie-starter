@@ -3,11 +3,10 @@
 * This is the core rookie file where most of the
 * main functions & features to keep our theme clean.
 *
-* @package rookie cleanup
-* @package bone
+
 * @copyright Eddie Machado https://github.com/eddiemachado
+* @package Rookie Startar
 * @author Abukwaik http://www.croti.com
-* @link http://www.croti.com
 * @since rookie 1.0
 */
 

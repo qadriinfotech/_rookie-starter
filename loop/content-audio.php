@@ -1,8 +1,8 @@
 <?php
 /**
- * @package Rookie audio post format
- * @author Abukwaik
- * @since Rookie 1.0
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
+ * @since rookie 1.0
  *
  */
 ?>

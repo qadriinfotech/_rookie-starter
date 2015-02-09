@@ -1,11 +1,9 @@
 <?php 
 
 /**
-* @package rookie enqueued scripts
-* @author Abukwaik http://www.croti.com
-* @copyright Copyright (c) 2015, Rookie
-* @link http://www.croti.com
-* @since rookie 1.0
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
+ * @since rookie 1.0
 *
 */
 
@@ -17,8 +15,8 @@ function rookie_scripts() {
 
 	wp_enqueue_script('modernizr',      	JS_URI . '/modernizr.min.js', 		array(), '', true);
 	wp_enqueue_script('bootstrapjs',    	JS_URI . '/bootstrap.min.js', 		array('jquery'), '', true);
-	wp_enqueue_script('plugins',        	JS_URI . '/plugins.min.js', 		array(), '', true);
-	wp_enqueue_script('theme-script',   	JS_URI . '/scripts.min.js', 		array(), '', true);
+	wp_enqueue_script('plugins',        	JS_URI . '/plugins.js', 			array(), '', true);
+	wp_enqueue_script('theme-script',   	JS_URI . '/scripts.js', 			array(), '', true);
 
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script('keyboard-image-navigation',   JS_URI . '/keyboard-image-navigation.js');
