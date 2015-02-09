@@ -9,6 +9,7 @@
  * @package rookie - Bootstrap Theme Class 2014 - 2015
  * @author Abukwaik
  * @link https://github.com/abukwaik
+ * @link http://www.croti.com/
  * @copyright Copyright (c) 2015, Rookie
  * @license http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  * @since rookie 1.0
