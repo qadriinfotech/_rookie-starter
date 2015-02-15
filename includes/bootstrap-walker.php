@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package wp_bootstrap_navwalker
- * @link https://github.com/twittem/wp-bootstrap-navwalker
+ * 
  * A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
  * Version: 2.0.4
  * @author Edward McIntyre - @twittem
+ * @link https://github.com/twittem/wp-bootstrap-navwalker
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
@@ -81,6 +81,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['title']  = ! empty( $item->title )	? $item->title	: '';
 			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+			$atts['itemprop'] = 'url';
 
 			// If item has_children add atts to a.
 			if ( $args->has_children ) {

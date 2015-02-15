@@ -1,7 +1,7 @@
 <?php
 /**
- * @package Include the TGM_Plugin_Activation class.
- * @package rookie plugin setup
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  * 
  */

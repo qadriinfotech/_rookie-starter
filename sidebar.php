@@ -9,7 +9,7 @@
  */
 ?>
 <?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
-	<div id="sidebar" class="col-md-3"<?php Schema_Markup::schema_metadata( array( 'context' => 'sidebar' ) ); ?>>
+	<div id="sidebar" class="col-md-3" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 		<div class="sidebar-padder clearfix">
 			<aside class="widget-area">
 				<?php dynamic_sidebar( 'sidebar' ); ?>

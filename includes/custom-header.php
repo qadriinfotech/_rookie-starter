@@ -3,12 +3,12 @@
  * Implement Custom Header functionality for Rookie
  *
  * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
+ * @since rookie 1.0
  */
 
 /**
  * Set up the WordPress core custom header settings.
- *
- * @since Rookie 1.0
  *
  * @uses rookie_header_style()
  * @uses rookie_admin_header_style()

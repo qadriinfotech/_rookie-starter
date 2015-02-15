@@ -2,7 +2,7 @@
 /**
  * The template for displaying search forms in rookie
  *
- * @package rookie searchform
+ * @package Rookie Startar
  * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */

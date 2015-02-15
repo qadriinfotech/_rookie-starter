@@ -1,11 +1,9 @@
 <?php 
 /**
- * bbPress compatibility patch by Dan Smith
  * I've added some modification and HTML schema compatibility 
  *
- * @package rookie breadcrumb
- * @author pentie
- * @link https://github.com/pentie/wp-truemag-gdedu/blob/master/functions.php
+ * @package Rookie Startar
+ * @link http://www.dezzain.com/wordpress-tutorials/add-seo-schemas-breadcrumbs/
  * @since rookie 1.0
  */
 
@@ -13,150 +11,136 @@
      Rookie Breadcrumbs
 **/
 
-function rookie_breadcrumb_lists(){
-    /* === OPTIONS === */
-    $text['home']     = __('Home', 'rookie'); // text for the 'Home' link
-    $text['category'] = '%s'; // text for a category page
-    $text['search']   = __('Search Results for','rookie').' "%s"'; // text for a search results page
-    $text['tag']      = __('Tag', 'rookie').' "%s"'; // text for a tag page
-    $text['author']   = __('Author', 'rookie').' %s'; // text for an author page
-    $text['404']      = __('404', 'rookie'); // text for the 404 page
-
-    $show_current   = 1; // 1 - show current post/page/category title in breadcrumbs, 0 - don't show
-    $show_on_home   = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
-    $show_home_link = 1; // 1 - show the 'Home' link, 0 - don't show
-    $show_title     = 1; // 1 - show the title for the links, 0 - don't show
-    $delimiter      = ' \\ '; // delimiter between crumbs
-    $before         = '<span class="current">'; // tag before the current crumb
-    $after          = '</span>'; // tag after the current crumb
-    /* === END OF OPTIONS === */
-
+function rookie_breadcrumb_lists() {
     global $post;
-    $home_link    = home_url('/');
-    $link_before  = '<span itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
-    $link_after   = '</span>';
-    $link_attr    = ' itemprop="url"';
-    $link         = $link_before . '<a' . $link_attr . ' href="%1$s"><span itemprop="title">%2$s</span></a>' . $link_after;
-    $parent_id    = $parent_id_2 = ($post) ? $post->post_parent : 0;
-    $frontpage_id = get_option('page_on_front');
+    
+    //schema link
+    $schema_link = 'http://data-vocabulary.org/Breadcrumb';
+    $home = 'Home';
+    $delimiter = ' \ ';
+    $home_link = home_url('/');
+    $before = '<span class="current" itemprop="title">';
+    $after = '</span>';
 
     if (is_front_page()) {
+    // no need for breadcrumbs in homepage
+    }
 
-        if ($show_on_home == 1) echo '<div id="breadcrumbs"><a href="' . $home_link . '" itemprop="url">' . $text['home'] . '</a></div>';
+    elseif (is_home()) {
+        $title = get_option('page_for_posts') ? get_the_title(get_option('page_for_posts')) : __('Blog', 'rookie');
+        echo '<div id="breadcrumbs"><a href="' . $home_link . '">' . $home . '</a> \ ' . $title . '</div>';
+    } 
 
-    } elseif(is_home()){
-        $title = get_option('page_for_posts')?get_the_title(get_option('page_for_posts')):__('Blog','rookie');
-        echo '<div id="breadcrumbs"><a href="' . $home_link . '" itemprop="url">' . $text['home'] . '</a> \ '.$title.'</div>';
-    } else {
-
-        echo '<div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
-        if ($show_home_link == 1) {
-            echo '<a href="' . $home_link . '" itemprop="url"><span itemprop="title">' . $text['home'] . '</span></a>';
-            if ($frontpage_id == 0 || $parent_id != $frontpage_id) echo $delimiter;
+    else {
+        echo '<div id="breadcrumbs">';
+        // main breadcrumbs lead to homepage
+        echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $home_link . '">' . '<span itemprop="title">' . $home . '</span>' . '</a></span>' . $delimiter . ' ';
+        // if blog page exists
+        if (get_page_by_path('blog')) {
+            if (!is_page()) {
+                echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_permalink(get_page_by_path('blog')) . '">' . '<span itemprop="title">Blog</span></a></span>' . $delimiter . ' ';
+            }
+        }
+        if (is_category()) {
+            $thisCat = get_category(get_query_var('cat'), false);
+            if ($thisCat->parent != 0) {
+                $category_link = get_category_link($thisCat->parent);
+                echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $category_link . '">' . '<span itemprop="title">' . get_cat_name($thisCat->parent) . '</span>' . '</a></span>' . $delimiter . ' ';
+            }
+            $category_id = get_cat_ID(single_cat_title('', false));
+            $category_link = get_category_link($category_id);
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $category_link . '"></a>' . '<span itemprop="title">' . __('Archive by category: "', 'rookie') . single_cat_title('', false) . '"</span>' . '</span>';
         }
 
-        if ( is_category() ) {
-            $this_cat = get_category(get_query_var('cat'), false);
-            if ($this_cat->parent != 0) {
-                $cats = get_category_parents($this_cat->parent, TRUE, $delimiter);
-                if ($show_current == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
-                $cats = str_replace('<a', $link_before . '<a' . $link_attr, $cats);
-                $cats = str_replace('</a>', '</a>' . $link_after, $cats);
-                if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
-                echo $cats;
-            }
-            if ($show_current == 1) echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+        elseif (is_search()) {
+            echo __('Search results for: "', 'rookie') . get_search_query() . __('"', 'rookie');
+        }
 
-        } elseif ( is_search() ) {
-            echo $before . sprintf($text['search'], get_search_query()) . $after;
-
-        } elseif ( is_day() ) {
-            echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
-            echo sprintf($link, get_month_link(get_the_time('Y'),get_the_time('m')), get_the_time('F')) . $delimiter;
-            echo $before . get_the_time('d') . $after;
-
-        } elseif ( is_month() ) {
-            echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
-            echo $before . get_the_time('F') . $after;
-
-        } elseif ( is_year() ) {
-            echo $before . get_the_time('Y') . $after;
-
-        } elseif ( is_single() && !is_attachment() ) {
-            if ( get_post_type() != 'post' ) {
+        elseif (is_single() && !is_attachment()) {
+            if (get_post_type() != 'post') {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
-                printf($link, $home_link . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
-                if ($show_current == 1) echo $delimiter . $before . get_the_title() . $after;
-            } else {
-                $cat = get_the_category(); $cat = $cat[0];
-                $cats = get_category_parents($cat, TRUE, $delimiter);
-                if ($show_current == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
-                $cats = str_replace('<a', $link_before . '<a' . $link_attr, $cats);
-                $cats = str_replace('</a>', '</a>' . $link_after, $cats);
-                if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
-                echo $cats;
-                if ($show_current == 1) echo $before . get_the_title() . $after;
+                echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $home_link . '/' . $slug['slug'] . '">' . '<span itemprop="title">' . $post_type->labels->singular_name . '</span>' . '</a></span>';
+                echo ' ' . $delimiter . ' ' . get_the_title();
             }
-
-        } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-            $post_type = get_post_type_object(get_post_type());
-            echo $before . $post_type->labels->singular_name . $after;
-
-        } elseif ( is_attachment() ) {
-            $parent = get_post($parent_id);
-            $cat = get_the_category($parent->ID); $cat = $cat[0];
-            $cats = get_category_parents($cat, TRUE, $delimiter);
-            $cats = str_replace('<a', $link_before . '<a' . $link_attr, $cats);
-            $cats = str_replace('</a>', '</a>' . $link_after, $cats);
-            if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
-            echo $cats;
-            printf($link, get_permalink($parent), $parent->post_title);
-            if ($show_current == 1) echo $delimiter . $before . get_the_title() . $after;
-
-        } elseif ( is_page() && !$parent_id ) {
-            if ($show_current == 1) echo $before . get_the_title() . $after;
-
-        } elseif ( is_page() && $parent_id ) {
-            if ($parent_id != $frontpage_id) {
-                $breadcrumbs = array();
-                while ($parent_id) {
-                    $page = get_page($parent_id);
-                    if ($parent_id != $frontpage_id) {
-                        $breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
+            else {
+                $category = get_the_category();
+                if ($category) {
+                    foreach ($category as $cat) {
+                        echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_category_link($cat->term_id) . '">' . '<span itemprop="title">' . $cat->name . '</span>' . '</a></span>' . $delimiter . ' ';
                     }
-                    $parent_id = $page->post_parent;
                 }
-                $breadcrumbs = array_reverse($breadcrumbs);
-                for ($i = 0; $i < count($breadcrumbs); $i++) {
-                    echo $breadcrumbs[$i];
-                    if ($i != count($breadcrumbs)-1) echo $delimiter;
-                }
+                echo get_the_title();
             }
-            if ($show_current == 1) {
-                if ($show_home_link == 1 || ($parent_id_2 != 0 && $parent_id_2 != $frontpage_id)) echo $delimiter;
-                echo $before . get_the_title() . $after;
+        }
+        elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
+            $post_type = get_post_type_object(get_post_type());
+            echo $post_type->labels->singular_name;
+        }
+        elseif (is_attachment()) {
+            $parent = get_post($post->post_parent);
+            $cat = get_the_category($parent->ID);
+            $cat = $cat[0];
+            echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_permalink($parent) . '">' . '<span itemprop="title">' . $parent->post_title . '</span>' . '</a></span>';
+            echo ' ' . $delimiter . ' ' . get_the_title();
+        }
+        elseif (is_page() && !$post->post_parent) {
+            $get_post_slug = $post->post_name;
+            $post_slug = str_replace('-', ' ', $get_post_slug);
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_permalink() . '">' . '<span itemprop="title">' . ucfirst($post_slug) . '</span>' . '</a></span>';
+        }
+        elseif (is_page() && $post->post_parent) {
+            $parent_id = $post->post_parent;
+            $breadcrumbs = array();
+            while ($parent_id) {
+                $page = get_page($parent_id);
+                $breadcrumbs[] = '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_permalink($page->ID) . '">' . '<span itemprop="title">' . get_the_title($page->ID) . '</span>' . '</a></span>';
+                $parent_id = $page->post_parent;
             }
-
-        } elseif ( is_tag() ) {
-            echo $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
-
-        } elseif ( is_author() ) {
+            $breadcrumbs = array_reverse($breadcrumbs);
+            for ($i = 0; $i < count($breadcrumbs); $i++) {
+                echo $breadcrumbs[$i];
+                if ($i != count($breadcrumbs) - 1)
+                    echo ' ' . $delimiter . ' ';
+            }
+            echo $delimiter . '<span itemscope itemtype="' . $schema_link . '"><span class="current" itemprop="title">' . the_title_attribute('echo=0') . '</span></span>';
+        }
+        elseif (is_tag()) {
+            $tag_id = get_term_by('name', single_cat_title('', false), 'post_tag');
+            if ($tag_id) {
+                $tag_link = get_tag_link($tag_id->term_id);
+            }
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $tag_link . '"></a><span itemprop="title">' . __('Posts tagged: "', 'rookie') . single_tag_title('', false) . '"</span>' . '</span>';
+        }
+        elseif (is_author()) {
             global $author;
             $userdata = get_userdata($author);
-            echo $before . sprintf($text['author'], $userdata->display_name) . $after;
-
-        } elseif ( is_404() ) {
-            echo $before . $text['404'] . $after;
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_author_posts_url($userdata->ID) . '"></a><span itemprop="title">' . __('Author', 'rookie') . ': "' . $userdata->display_name . '"</span>' . '</span>';
+        }
+        elseif (is_404()) {
+            echo  __('Error 404', 'rookie');
         }
 
-        if ( get_query_var('paged') ) {
-            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() || is_home() ) echo ' (';
-            echo __('Page','rookie') . ' ' . get_query_var('paged');
-            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() || is_home() ) echo ')';
+        elseif (is_day()) {
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_year_link(get_the_time('Y')) . '">' . '<span itemprop="title">' . get_the_time('Y') . '</span>' . '</a></span>' . $delimiter . ' ';
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . '<span itemprop="title">' . get_the_time('F') . '</span>' . '</a></span>' . $delimiter . ' ';
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')) . '">' . '<span itemprop="title">' . get_the_time('d') . '</span>' . '</a></span>';
         }
-
-        echo '</div><!-- .breadcrumbs -->';
-
+        elseif (is_month()) {
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_year_link(get_the_time('Y')) . '">' . '<span itemprop="title">' . get_the_time('Y') . '</span>' . '</a></span>' . $delimiter . ' ';
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . '<span itemprop="title">' . get_the_time('F') . '</span>' . '</a></span>';
+        }
+        elseif (is_year()) {
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_year_link(get_the_time('Y')) . '">' . '<span itemprop="title">' . get_the_time('Y') . '</span>' . '</a></span>';
+        }
+        if (get_query_var('paged')) {
+            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+                echo ' (';
+                    echo __('Page', 'rookie') . ' ' . get_query_var('paged');
+                    if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+                        echo ')';
+        }
+        echo '</div>';
     }
-} // end
+}

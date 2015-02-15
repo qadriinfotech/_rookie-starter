@@ -8,37 +8,34 @@
  */
 ?>
 
-
-<?php if (ro_get_option('hide_top_header')) { ?>
-    <header id="top-bar-wrap" <?php Schema_Markup::schema_metadata( array( 'context' => 'header' ) ); ?>>
-        <div id="top-bar" <?php Schema_Markup::schema_metadata( array( 'context' => 'ContactPoint' ) ); ?>> 
-            <div class="container clearfix">
-                <div class="top-bar-left" id="top-bar-content" itemprop="contactType">
-                    <?php $phone_text = ro_get_option('phone_text');
-                    if (!empty ($phone_text) && ro_get_option('phone_text')) { ?>
-                    <span <?php Schema_Markup::schema_metadata( array( 'context' => 'telephone' ) ); ?>>
-                    <i class="fa fa-phone"></i><?php echo ro_get_option('phone_text'); ?>
-                    </span> 
-                    <?php } ?>
-                    <?php $email_text = ro_get_option('email_text');
-                    if (!empty ($email_text) && ro_get_option('email_text')) { ?>
-                    <span <?php Schema_Markup::schema_metadata( array( 'context' => 'email' ) ); ?>>
-                    <i class="fa fa-envelope"></i> <?php echo ro_get_option('email_text'); ?> 
-                    </span>
-                    <?php } ?>
-                    <?php $url_text = ro_get_option('url_text');
-                    if (!empty ($url_text) && ro_get_option('url_text')) { ?>         
-                    <span class="external-link"<?php Schema_Markup::schema_metadata( array( 'context' => 'url' ) ); ?>>
-                        <i class="fa fa-external-link"></i>
-                        <?php echo ro_get_option('url_text'); ?>
-                    </span>
-                    <?php } ?>
-                </div><!-- #top-bar-content -->
-
-                <?php if (ro_get_option('header_socials')) { ?>
-                <?php header_socials(); ?>
+<div id="top-bar-wrap">
+    <div id="top-bar"> 
+        <div class="container clearfix">
+            <div class="top-bar-left" id="top-bar-content">
+                <?php $phone_text = ro_get_option('phone_text');
+                if (!empty ($phone_text) && ro_get_option('phone_text')) { ?>
+                <span class="external-link" itemprop="telephone">
+                <i class="fa fa-phone"></i><a href="tel:<?php echo ro_get_option('phone_text'); ?>"><?php echo ro_get_option('phone_text'); ?></a>
+                </span> 
                 <?php } ?>
-            </div> <!-- .container -->
-        </div> <!-- #top-bar -->
-    </header>
-<?php } ?>
+                <?php $email_text = ro_get_option('email_text');
+                if (!empty ($email_text) && ro_get_option('email_text')) { ?>
+                <span class="external-link" itemprop="email">
+                <i class="fa fa-envelope"></i><a href="mailto:<?php echo ro_get_option('email_text'); ?>"><?php echo ro_get_option('email_text'); ?></a> 
+                </span>
+                <?php } ?>
+                <?php $url_text = ro_get_option('url_text');
+                if (!empty ($url_text) && ro_get_option('url_text')) { ?>         
+                <span class="external-link">
+                    <i class="fa fa-external-link"></i>
+                    <a itemprop="url" href="#"><span itemprop="name"><?php echo ro_get_option('url_text'); ?></span></a>
+                </span>
+                <?php } ?>
+            </div><!-- #top-bar-content -->
+
+            <?php if (ro_get_option('header_socials')) { ?>
+            <?php header_socials(); ?>
+            <?php } ?>
+        </div> <!-- .container -->
+    </div> <!-- #top-bar -->
+</div>

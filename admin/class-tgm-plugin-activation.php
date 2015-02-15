@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin installation and activation for WordPress themes.
+ * TGM-Plugin-Activation
  *
- * @package   TGM-Plugin-Activation
  * @version   2.4.0
  * @author    Thomas Griffin <thomasgriffinmedia.com>
  * @author    Gary Jones <gamajo.com>

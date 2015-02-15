@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * @package rookie archive
+ * @package Rookie Startar
  * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */

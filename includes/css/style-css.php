@@ -11,7 +11,7 @@
 ol.unstyled, 
 ul.unstyled {
   list-style: none none;
-  margin-left: 0
+  margin: 0
 }
 
 img {
@@ -1065,15 +1065,13 @@ img.footer-logo {
 
 .footer-wrapper {
   border-top: 3px solid #b2afe8;
-  box-shadow: 0 1px 1px rgba(0,0,0,.03) inset,0 -1px 1px rgba(0,0,0,.03) inset;
-  background: #222;
   color: #aaa;
   padding: 20px;
-  margin-top: 30px;
   font-size: 13px
 }
 
 .footer-widgets { margin: 15px 0 }
+
 .footer-widget-title:before {
   border-bottom: 1px solid #b2afe8;
   bottom: -1px;
@@ -1150,45 +1148,46 @@ img.footer-logo {
 
 .footer-bottom-wrapper {
   background: #111;
-  padding-top: 10px
-}
-
-.copyright-text, 
-.footer-menu { padding-bottom: 10px }
-
-.copyright-text {
-  font-size: 12px;
-  color: #777
-}
-
-.footer-menu { text-align: right }
-.bottom-menu {
   font-size: 13px;
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-  margin: 0
+  padding: 10px 0;
+  color: #777;
 }
 
-.footer-menu li {
+.footer-nav ul {
+  padding-left: 0
+}
+
+.footer-nav { 
+  text-align: right
+}
+
+.footer-nav li {
   display: inline-block;
-  border-left: 1px solid rgba(99,99,99,.9);
+  border-left: 1px solid #777;
   line-height: 10px;
   margin-left: 4px
 }
 
-.footer-menu li:first-child { border-left: none }
-.footer-menu li a {
+.footer-nav li:first-child { border-left: none }
+
+.footer-nav li a {
   padding-left: 8px;
-  color: #777;
-  text-decoration: none;
-  text-align: center
+  transition: all .4s ease 0s;
+  -webkit-transition: all .2s ease 0s;
+  color: #777
 }
 
-.footer-menu li a:hover,a:active,a:focus {
-  transition: all .2s ease 0s;
-  -webkit-transition: all .2s ease 0s;
-  color: #644C80
+.footer-nav li a:hover, 
+.footer-nav li a:active, 
+.footer-nav li a:focus {
+  color: #908dbd
+}
+
+@media (max-width: 767px) {
+  .copyright-text, .footer-nav {
+    text-align: center !important;
+    padding: 5px 0
+  }
 }
 
 /* TO TOP */

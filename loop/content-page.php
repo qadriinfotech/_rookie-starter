@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * @package Rookie Startar
  * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
@@ -8,15 +7,15 @@
  */
 ?>
 
-<article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/BlogPosting" itemscope="itemscope">
 
 	<?php rookie_post_thumbnail(); ?>
 
 	<header class="entry-header">
-		<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="page-title"><?php the_title(); ?></h2>
+		<h2 class="page-title" itemprop="headline"><?php the_title(); ?></h2>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content clearfix"<?php Schema_Markup::schema_metadata( array( 'context' => 'entry_content' ) ); ?>>
+	<div class="entry-content clearfix">
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
@@ -30,8 +29,8 @@
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 				'current_before' => '',
-				'current_after' => '',
-				'pagelink'    => '%',
+				'current_after'  => '',
+				'pagelink'    	 => '%',
 			) );
 		?>
 	</div>

@@ -3,10 +3,8 @@
 * This is the core rookie file where most of the
 * main functions & features to keep our theme clean.
 *
-
 * @copyright Eddie Machado https://github.com/eddiemachado
 * @package Rookie Startar
-* @author Abukwaik http://www.croti.com
 * @since rookie 1.0
 */
 

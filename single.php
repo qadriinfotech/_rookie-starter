@@ -18,7 +18,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
     $col = 'col-md-9';
 } ?>
 <div class="row-fluid">      
-	<div <?php Schema_Markup::schema_metadata( array('context' => 'body' )); ?> id="primary" class="content-area <?php echo $col; ?>">
+	<div id="primary" class="content-area <?php echo $col; ?>">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'loop/content', 'single', get_post_format() ); ?>
 			<?php setPostViews(get_the_ID()); ?>

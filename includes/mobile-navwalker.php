@@ -85,7 +85,7 @@ class wp_bootstrap_mobile_navwalker extends Walker_Nav_Menu {
 
             $atts = array();
             $atts['title']  = ! empty( $item->title )   ? $item->title  : '';
-            
+            $atts['itemprop'] = 'url';
             $atts['rel']    = ! empty( $item->xfn )     ? $item->xfn    : '';
             
             // If item has_children add atts to a.
@@ -104,7 +104,7 @@ class wp_bootstrap_mobile_navwalker extends Walker_Nav_Menu {
             foreach ( $atts as $attr => $value ) {
                 if ( ! empty( $value ) ) {
                     $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-                    $attributes .= ' ' . $attr . '="' . $value . '"';
+                    $attributes .= ' ' . $attr . '="' . $value . '" itemprop="url"';
                 }
             }
 

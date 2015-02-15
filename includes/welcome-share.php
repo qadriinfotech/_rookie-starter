@@ -21,7 +21,6 @@
 		load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk');
 		load('https://apis.google.com/js/plusone.js', 'gplus1js');
 		load('//platform.twitter.com/widgets.js', 'tweetjs');
-		load('//assets.pinterest.com/js/pinit.js', 'pinitjs');
 	}
 	if (w.addEventListener) { w.addEventListener("load", go, false); }
 		else if (w.attachEvent) { w.attachEvent("onload",go); }
@@ -29,8 +28,8 @@
 </script> 
 <ul id="welcome_share">
 	<li class="twitter"><a class="twitter-share-button" data-count="horizontal" data-via="RookieTheme" data-text="<?php echo $theme_title; ?>" data-url="<?php echo $theme_url; ?>"></a></li>
-	<li class="facebook"><div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-href="<?php echo $theme_url.'?ref=RookieTheme'; ?>"></div></li>
-	<li class="gplus"><g:plusone size="medium" href="<?php echo $theme_url; ?>"></g:plusone></li>
+	<li class="facebook"><div class="fb-like" data-share="true" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-href="<?php echo $theme_url.'?ref=RookieTheme'; ?>"></div></li>
+	<li class="gplus"><div class="g-plusone" data-size="medium" data-href="<?php echo $theme_url; ?>"></div></li>
 </ul>
 
 <?php endif; ?>

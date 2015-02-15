@@ -7,18 +7,18 @@
  */
 ?>
 
-<article <?php Schema_Markup::schema_metadata( array( 'context' => 'content' ) ); ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/BlogPosting" itemscope="itemscope">
 	
 	<?php rookie_post_thumbnail(); ?>
 
 	<header class="entry-header">
-		<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2 class="entry-title" itemprop="headline"><?php the_title(); ?></h2>
 		<div class="entry-meta">
 			<?php rookie_posted_on(); ?>
 		</div>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content" <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_content' ) ); ?>>
+	<div class="entry-content clearfix">
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
@@ -32,11 +32,10 @@
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 				'current_before' => '',
-				'current_after' => '',
-				'pagelink'    => '%',
+				'current_after'  => '',
+				'pagelink'    	 => '%',
 			) );
 		?>
-
     	<?php if (ro_get_option ('post_socials')) { ?>
     	<?php post_socials(); ?> 
     	<?php } ?>

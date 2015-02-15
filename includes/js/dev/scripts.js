@@ -44,18 +44,18 @@
         var navOffset, scrollPos = 0;
         
         // add utility wrapper elements for positioning
-        $("#wrap").wrap('<div class="placeholder-nav"></div>');
+        $("#site-nav").wrap('<div class="placeholder-nav"></div>');
 
         // function to run on page load and window resize
         function stickyUtility() {
             
             // only update navOffset if it is not currently using fixed position
-            if (!$("#wrap").hasClass("is-sticky")) {
-                navOffset = $("#wrap").offset().top;
+            if (!$("#site-nav").hasClass("is-sticky")) {
+                navOffset = $("#site-nav").offset().top;
             }
             
             // apply matching height to nav wrapper div to avoid awkward content jumps
-            $(".placeholder-nav").height($("#wrap").outerHeight());
+            $(".placeholder-nav").height($("#site-nav").outerHeight());
             
         } // end stickyUtility function
         
@@ -73,9 +73,9 @@
             scrollPos = $(window).scrollTop();
             
             if (scrollPos >= navOffset) {
-                $("#wrap").addClass("is-sticky");
+                $("#site-nav").addClass("is-sticky");
             } else {
-                $("#wrap").removeClass("is-sticky");
+                $("#site-nav").removeClass("is-sticky");
             }
             
         });

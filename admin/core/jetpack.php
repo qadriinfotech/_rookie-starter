@@ -3,7 +3,8 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package Rookie
+ * @package Rookie Startar
+ * @since rookie 1.0
  */
 
 /**

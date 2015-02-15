@@ -1,6 +1,6 @@
 <?php
 /**
- * @package rookie categories
+ * @package Rookie Startar
  * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */

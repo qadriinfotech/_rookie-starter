@@ -11,9 +11,9 @@ get_header(); ?>
 <div class="row-fluid">
 	<div class="col-ms-12">
 		<?php while ( have_posts() ) : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/BlogPosting" itemscope="itemscope">
 				<header class="entry-header">
-					<h2 <?php Schema_Markup::schema_metadata( array( 'context' => 'entry_title' ) ); ?> class="entry-title"><?php the_title(); ?></h2>
+					<h2 class="entry-title" itemprop="headline"><?php the_title(); ?></h2>
 					<div class="entry-meta">
 						<?php rookie_posted_on(); ?>
 						<?php 
@@ -52,8 +52,9 @@ get_header(); ?>
 								'after'       => '</div>',
 								'link_before' => '<span>',
 								'link_after'  => '</span>',
-								'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'rookie' ) . ' </span>%',
-								'separator'   => '<span class="screen-reader-text">, </span>',
+								'current_before' => '',
+								'current_after' => '',
+								'pagelink'    => '%',
 								) );
 						?>
 				</div><!-- .entry-content -->

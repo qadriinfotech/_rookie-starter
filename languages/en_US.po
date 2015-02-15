@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rookie 1.0\n"
-"POT-Creation-Date: 2015-02-09 04:54-0500\n"
-"PO-Revision-Date: 2015-02-09 04:59-0500\n"
+"POT-Creation-Date: 2015-02-15 14:44-0500\n"
+"PO-Revision-Date: 2015-02-15 14:44-0500\n"
 "Last-Translator: \n"
 "Language-Team: Abukwaik <abukwaikabeer@gmail.com>\n"
 "Language: en_US\n"
@@ -17,6 +17,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: C:\\wamp\\www\\starter\\wp-content\\themes\\_rookie-starter\n"
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/404.php:18
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:122
 msgid "Error 404"
 msgstr "Error clueless"
 
@@ -229,38 +230,38 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/clean.php:140
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/clean.php:138
 #, php-format
 msgid "Posts by %s"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:89
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:92
 msgid "Sidebar"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:91
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:94
 msgid "The default sidebar, place widgets here will show in all posts"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:98
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:101
 msgid "Pages Sidebar"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:100
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:103
 msgid "The second sidebar, place widgets here will show in all pages"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:111
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:123
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:135
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:147
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:114
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:126
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:138
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:150
 msgid "Footer Widget 1"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:113
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:125
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:137
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:149
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:116
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:128
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:140
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/admin/core/register.php:152
 msgid ""
 "The first Row of Footer Widgets, place widgets as per no. of footer widgets setting you set in "
 "Theme Options"
@@ -363,7 +364,15 @@ msgstr ""
 msgid "for"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/header.php:41
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/footer.php:31
+msgid "Copyright &copy; "
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/footer.php:36
+msgid "All rights reserved."
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/header.php:43
 msgid "Toggle navigation"
 msgstr ""
 
@@ -383,55 +392,54 @@ msgstr ""
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:30
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-audio.php:30
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-link.php:30
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:28
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:27
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-single.php:30
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content.php:34
 msgid "Pages:"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/image.php:55
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:155
-msgid "Page"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:57
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:58
 msgid "First"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:59
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:60
 msgid "previous"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:72
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:73
 msgid "next"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:75
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/bootstrap-pagination.php:76
 msgid "Last"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:18
-msgid "Home"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:30
+msgid "Blog"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:20
-msgid "Search Results for"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:52
+msgid "Archive by category: \""
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:21
-msgid "Tag"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:56
+msgid "Search results for: \""
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:22
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:56
+msgid "\""
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:114
+msgid "Posts tagged: \""
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:119
 msgid "Author"
 msgstr ""
 
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:23
-msgid "404"
-msgstr ""
-
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:48
-msgid "Blog"
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/breadcrumbs.php:140
+msgid "Page"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:26
@@ -440,6 +448,14 @@ msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:30
 msgid "Newer Comments <i class=\"fa fa-chevron-right fa-fw\"></i>"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:72
+msgid "<i class=\"fa fa-chevron-left\"></i>"
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:73
+msgid "<i class=\"fa fa-chevron-right\"></i>"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:78
@@ -467,7 +483,7 @@ msgid "Featured"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:134
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:39
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:38
 msgid "Edit"
 msgstr ""
 
@@ -477,7 +493,10 @@ msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:164
 #, php-format
-msgid "<span class=\"posted-on\"><i class=\"fa fa-calendar\"></i> Published on %1$s </span><span "
+msgid ""
+"<span class=\"posted-on\"><i class=\"fa fa-calendar\"></i> Published on %1$s </span><span class="
+"\"byline\" itemtype=\"http://schema.org/Person\" itemscope=\"itemscope\" itemprop=\"author\"> by "
+"<i class=\"fa fa-user\"></i> %2$s </span>"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/template-tags.php:168
@@ -534,11 +553,11 @@ msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome.php:27
 msgid ""
-"Thanks for installing <strong>Rookie</strong> I really hope you enjoy using this theme as much "
-"as i have enjoyed creating it.<br>I have spent a lot of time to develop/support this theme, if "
-"you liked it, Please consider donating so I can keep this as a free theme and add more features "
-"in the future. If you cant that is okay as well, I will do my best to make sure you enjoy using "
-"our theme!"
+"Thanks for installing <strong>Rookie</strong> We really hope you enjoy using this theme as much "
+"as we have enjoyed creating it.<br>We have spent a lot of time to develop/support this theme, if "
+"you liked it, Please consider donating so we can keep this as a free theme and add more features "
+"in the future. If you cant that is okay as well, We will do our best to make sure you enjoy "
+"using our theme!"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome.php:28
@@ -553,8 +572,16 @@ msgstr ""
 msgid "Refer to "
 msgstr ""
 
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome.php:39
+msgid "Rookie Documentation</a> to learn more about rookie features."
+msgstr ""
+
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome.php:42
 msgid "If you have any issue do not hesitate to join the "
+msgstr ""
+
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome.php:42
+msgid "issues tracker"
 msgstr ""
 
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/includes/welcome.php:45
@@ -568,7 +595,7 @@ msgstr ""
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-aside.php:25
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-audio.php:25
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-link.php:25
-#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:23
+#: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-page.php:22
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content-single.php:25
 #: C:\wamp\www\starter\wp-content\themes\_rookie-starter/loop/content.php:29
 #, php-format

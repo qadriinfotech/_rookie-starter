@@ -44,9 +44,13 @@ class Schema_Markup {
 				$attributes['itemtype']  = 'http://schema.org/WPHeader';
 			break;
 
+			case 'contact':
+				$attributes['itemscope'] = 'itemscope';
+				$attributes['itemtype']  = 'http://schema.org/LocalBusiness';
+			break;
+
 			case 'breadcrumb':
 				$attributes['itemscope'] = 'itemscope';
-
 				$attributes['itemtype']  = 'http://schema.org/breadcrumb';
 			break;
 
@@ -100,11 +104,6 @@ class Schema_Markup {
 
 			case 'name':
 				$attributes['itemprop'] = 'name';
-			break;
-
-			case 'ContactPoint':
-				$attributes['itemscope'] = 'itemscope';
-				$attributes['itemtype']  = 'http://schema.org/ContactPoint';
 			break;
 
 			case 'email':

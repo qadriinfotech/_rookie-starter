@@ -1,5 +1,4 @@
 <?php 
-
 /**
  * @package Rookie Startar
  * @author Abukwaik http://www.croti.com
@@ -15,8 +14,8 @@ function rookie_scripts() {
 
 	wp_enqueue_script('modernizr',      	JS_URI . '/modernizr.min.js', 		array(), '', true);
 	wp_enqueue_script('bootstrapjs',    	JS_URI . '/bootstrap.min.js', 		array('jquery'), '', true);
-	wp_enqueue_script('plugins',        	JS_URI . '/plugins.js', 			array(), '', true);
-	wp_enqueue_script('theme-script',   	JS_URI . '/scripts.js', 			array(), '', true);
+	wp_enqueue_script('plugins',        	JS_URI . '/plugins.min.js', 		array(), '', true);
+	wp_enqueue_script('theme-script',   	JS_URI . '/scripts.min.js', 		array(), '', true);
 
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script('keyboard-image-navigation',   JS_URI . '/keyboard-image-navigation.js');
@@ -28,8 +27,8 @@ function rookie_scripts() {
 
 	// We dont need these in Frontpage
 	if (!is_front_page()) { 
-		wp_enqueue_script('prettyphoto',     	JS_URI 	. '/jquery.prettyPhoto.js',  array('jquery'), '', true );
-		wp_enqueue_style ('prettyphoto-css',   	CSS_URI . '/prettyPhoto.css');
+		wp_enqueue_script('prettyphoto',     	JS_URI 	. '/jquery.prettyPhoto.min.js',  array('jquery'), '', true );
+		wp_enqueue_style ('prettyphoto-css',   	CSS_URI . '/prettyPhoto.min.css');
 	}
 
 	wp_localize_script('theme-script', 'rookie', array(
@@ -56,7 +55,7 @@ if (ro_get_option ('dynamiclly_load_css') && !is_child_theme() ) {
 
 	function rookie_dynamic_css(){
 		ob_start();
-		get_template_part('includes/css/bootstrap-min');
+		get_template_part('includes/css/bootstrap.min');
 		get_template_part('includes/css/style-css');
 		$output = ob_get_contents();
 		ob_end_clean();
@@ -76,7 +75,7 @@ if (ro_get_option ('dynamiclly_load_css') && !is_child_theme() ) {
 else {
 
 	function rookie_stylesheets() {
-		wp_enqueue_style('bootstrap', CSS_URI   . '/bootstrap-min.css');
+		wp_enqueue_style('bootstrap', CSS_URI   . '/bootstrap.css');
 		wp_enqueue_style('style',     CSS_URI   . '/style-css.css');
 	}
 	add_action('wp_enqueue_scripts', 'rookie_stylesheets', 40);

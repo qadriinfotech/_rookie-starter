@@ -24,20 +24,23 @@
     <?php footer_socials(); ?>
 <?php endif; ?>
 <?php if(ro_get_option('enable_copyright')) : ?>
-    <footer class="footer-bottom-wrapper"<?php Schema_Markup::schema_metadata( array( 'context' => 'footer' ) ); ?>>
+    <footer class="footer-bottom-wrapper" itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
         <div class="container-fluid clearfix">
             <div class="row-fluid">         
                 <div class="copyright-text col-md-6">
-                    <?php echo ro_get_option('footer_copyright'); ?>
+                    <?php _e( 'Copyright &copy; ', 'rookie' ); ?>
+                    <span itemprop="copyrightYear">
+                        <?php echo date( 'Y' ); ?>
+                    </span>
+                    <a href="<?php echo home_url() ?>" itemprop="url"><span itemprop="copyrightHolder"><?php echo esc_attr( get_bloginfo( 'name' ) ); ?></span></a>
+                    <?php _e( 'All rights reserved.', 'rookie' ); ?>
                 </div> 
-                <div class="footer-menu col-md-6">
-                    <ul class="bottom-menu">
-                        <?php if (has_nav_menu('footer-menu') && ro_get_option('enable_footer_menu')){
-                            footer_nav(); 
-                        }?>
-                    </ul>
-                </div>
-            </div>     
+                <nav class="footer-nav col-md-6" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+                    <?php if (has_nav_menu('footer-menu') && ro_get_option('enable_footer_menu')) : ?>
+                        <?php footer_nav(); ?>
+                    <?php endif; ?>
+                </nav>
+            </div>
         </div>
     </footer>
 <?php endif; ?>

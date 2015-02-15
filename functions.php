@@ -7,9 +7,7 @@
  * see http://codex.wordpress.org/Plugin_API
  * 
  * @package Rookie Startar
- * @author Abukwaik
- * @link https://github.com/abukwaik
- * @link http://www.croti.com/
+ * @author Abukwaik http://www.croti.com
  * @copyright Copyright (c) 2015, Rookie
  * @license http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  * @since rookie 1.0
@@ -20,7 +18,7 @@ define('THEME_DIR', get_template_directory());
 define('THEME_URI', get_template_directory_uri());
 define('THEME_NAME', 'Rookie Starter');
 define('THEME_SLUG', 'rookie starter');
-define('THEME_VERSION', '1.0');
+define('THEME_VERSION', '1.0.4');
 define('THEME_OPTIONS', 'ro_settings');
 define('JS_URI',  THEME_URI . '/includes/js');
 define('CSS_URI', THEME_URI . '/includes/css');
@@ -73,6 +71,9 @@ if ( !function_exists( 'rookie_setup' ) ) {
 
 add_action( 'after_setup_theme', 'rookie_setup' );
 
+/**
+  Title backwards compatibility for old WP versions
+*/
 if ( ! function_exists( '_wp_render_title_tag' ) ) {
   function theme_slug_render_title() {
 ?>

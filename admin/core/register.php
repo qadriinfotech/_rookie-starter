@@ -14,41 +14,44 @@
 
 // Primary menu
 function desktop_nav() {
-    wp_nav_menu(
-        array(
-          'menu'              => 'Primary',
-          'theme_location'    => 'primary',
-          'container'         => false,
-          'menu_class'        => 'nav navbar-nav navbar-right',
-          'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-          'walker'            => new wp_bootstrap_navwalker()
-        ) 
+  wp_nav_menu(
+    array(
+      'menu'              => 'Primary',
+      'theme_location'    => 'primary',
+      'container'         => false,
+      'menu_class'        => 'nav navbar-nav navbar-right',
+      'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+      'walker'            => new wp_bootstrap_navwalker()
+      ) 
     );
 }
 
 // Mobile menu
 function mobile_nav() {
-    wp_nav_menu(
-        array(
-          'menu'              => 'Primary',
-          'theme_location'    => 'primary',
-          'container'         => false,
-          'menu_class'        => 'nav navbar-nav',
-          'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-          'walker'            => new wp_bootstrap_mobile_navwalker()
-        ) 
+  wp_nav_menu(
+    array(
+      'menu'              => 'Primary',
+      'theme_location'    => 'primary',
+      'container'         => false,
+      'menu_class'        => 'nav navbar-nav',
+      'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+      'walker'            => new wp_bootstrap_mobile_navwalker()
+      ) 
     );
 }
 
 // Footer menu
 function footer_nav() {
-  wp_nav_menu(array(
-    'menu'              => 'Footer Menu',
-    'theme_location'    => 'footer',
-    'container'         => false,
-    'menu_class'        => 'footer-nav',
-    'items_wrap'        =>'%3$s'
-    ) );
+  wp_nav_menu(
+    array(
+      'menu'              => 'Footer Menu',
+      'theme_location'    => 'footer-menu',
+      'container'         => false,
+      'menu_class'        => 'unstyled',
+      'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+      'walker'            => new wp_bootstrap_navwalker()
+      ) 
+    );
 }
 /**
     Add search box to Navigation menu

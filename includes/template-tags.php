@@ -64,13 +64,13 @@ function rookie_content_nav( $nav_id ) {
 	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 
 	?>
-	<nav <?php Schema_Markup::schema_metadata( array( 'context' => 'nav' ) ); ?> id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
+	<nav id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>" role="navigation">
 		<ul class="pager">
 
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 
-				<?php previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="meta-nav">' . _x( '<i class="fa fa-chevron-left"></i>', 'Previous post link', 'rookie' ) . '</span> %title' ); ?>
-				<?php next_post_link( '<li class="nav-next next">%link</li>', '%title <span class="meta-nav">' . _x( '<i class="fa fa-chevron-right"></i>', 'Next post link', 'rookie' ) . '</span>' ); ?>
+				<?php previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="meta-nav">' . __( '<i class="fa fa-chevron-left"></i>', 'Previous post link', 'rookie' ) . '</span> %title' ); ?>
+				<?php next_post_link( '<li class="nav-next next">%link</li>', '%title <span class="meta-nav">' . __( '<i class="fa fa-chevron-right"></i>', 'Next post link', 'rookie' ) . '</span>' ); ?>
 
 			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -161,9 +161,9 @@ function rookie_posted_on() {
 		$time_string .= __(', <span class="updated-on"><i class="fa fa-refresh"></i> updated on</span>', 'rookie') . $time_string_update;
 	}
 
-	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Published on %1$s </span><span ' . Schema_Markup::schema_metadata( array( 'context' => 'author', 'echo' => false )) . ' class="byline"> by <i class="fa fa-user"></i> %2$s </span>', 'rookie' ),
+	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Published on %1$s </span><span class="byline" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> by <i class="fa fa-user"></i> %2$s </span>', 'rookie' ),
 		$time_string,
-		sprintf( '<span ' . Schema_Markup::schema_metadata( array( 'context' => 'author_name', 'echo' => false )) . ' class="author vcard"><a ' . Schema_Markup::schema_metadata( array( 'context' => 'url', 'echo' => false )) . ' class="url fn n" rel="author" href="%1$s" title="%2$s"> %3$s </a></span>',
+		sprintf( '<span class="author vcard"><a class="url fn" rel="author" href="%1$s" title="%2$s" itemprop="url"><span itemprop="name"> %3$s </span></a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'rookie' ), get_the_author() ) ),
 			esc_html( get_the_author() )
@@ -202,7 +202,7 @@ function rookie_entry_footer() {
 		<?php }
 
 		if (ro_get_option ('post_views')) { ?>
-			<span class="post-views"><i class="fa fa-eye"></i>
+			<span class="post-views" itemprop="interactionCount"><i class="fa fa-eye"></i>
 				<?php echo getPostViews(get_the_ID()); ?>
 			</span>
 		<?php }
@@ -210,7 +210,7 @@ function rookie_entry_footer() {
 	} // get_post_type
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
-		<span class="comments-link"><i class="fa fa-comment"></i>
+		<span class="comments-link" itemprop="interactionCount"><i class="fa fa-comment"></i>
 			<?php comments_popup_link( __( 'Leave a comment ', 'rookie' ), __( '1 Comment', 'rookie' ), __( '% Comments ', 'rookie' ) ); ?>
 		</span>
 	<?php }
@@ -382,7 +382,7 @@ function rookie_post_thumbnail() {
 
 	<?php else : ?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" itemprop="contentUrl">
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 		<?php
 			the_post_thumbnail( 'post-thumbnail', array( 'class' => 'single-featured','itemprop' => 'thumbnailUrl' , 'alt' => get_the_title() ) );
 		?>

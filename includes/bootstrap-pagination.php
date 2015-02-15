@@ -3,7 +3,8 @@
 /**
  * Bootstrap Style Pagination
  *
- * @package rookie
+ * @package Rookie Startar
+ * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */
 
