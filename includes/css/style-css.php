@@ -1125,7 +1125,7 @@ img.footer-logo {
   color: #aaa;
   border: 1px solid rgba(255,255,255,.07);
   border-radius: 50%;
-  line-height: 28px;
+  line-height: 26px;
   width: 28px;
   display: inline-block;
   font-size: 12px;
