@@ -26,9 +26,11 @@
   $header_bg_style = ro_get_option('header_bg_style');
 
   // Sub Header
-  $color_sub_header_bg = ro_hex2rgba(ro_get_option('color_sub_header_bg'),ro_get_option('sub_header_bg_opacity'));
-  $color_sub_header_txt = ro_get_option('color_sub_header_txt');
   $sub_header_bg_img = ro_get_option_media('sub_header_bg_img');
+  $sub_header_bg_color = ro_hex2rgba(ro_get_option('sub_header_bg_color'));
+  $color_sub_header_txt = ro_get_option('color_sub_header_txt');
+  $color_breadcrumbs_txt_a = ro_get_option('color_breadcrumbs_txt_a');
+  $color_breadcrumbs_txt_a_hover = ro_get_option('color_breadcrumbs_txt_a_hover');
 
   //Body
   $color_a_text = ro_get_option('color_a_text');
@@ -94,9 +96,16 @@
   background-attachment: fixed; 
   min-height: auto;
   <?php else: ?>
-  background-color: <?php echo $color_sub_header_bg; ?>;
+  background-color: <?php echo $sub_header_bg_color; ?>;
   <?php endif; ?>
   color : <?php echo $color_sub_header_txt; ?>;
+}
+
+#breadcrumbs a {
+  color: <?php echo $color_breadcrumbs_txt_a; ?>
+}
+#breadcrumbs a:hover {
+  color: <?php echo $color_breadcrumbs_txt_a_hover; ?>
 }
 
 <?php // Body Area ////////////////////////////////////////////// ?>
