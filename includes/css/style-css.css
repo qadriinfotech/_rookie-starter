@@ -576,7 +576,7 @@ ul li span.menu-toggler {
 #top-bar-social a .fa-rss:hover { color: #ffac3d }
 
 .logo { margin-top: 10px }
-.logo h2.site-title { margin:0 }
+.logo h2.site-title { margin: 5px 0 }
 
 .is-sticky {
   z-index: 9999;

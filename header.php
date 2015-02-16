@@ -48,10 +48,10 @@
                 <div id="navbar-brand">
                     <div class="logo">
                         <?php $logo_width = ro_get_option( 'logo_width', '110' ); $logo_height = ro_get_option( 'logo_height', '30' ); ?>        
-                        <a itemprop="url" href="<?php echo esc_url( $logo_url ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" >
-                            <?php if(!empty($logo['url'])) : ?>
-                            <img itemprop="logo" width="<?php echo $logo_width; ?>" height="<?php echo $logo_height; ?>" src="<?php echo $logo['url']; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-                        </a>                    
+                        <?php if(!empty($logo['url'])) : ?>
+                            <a itemprop="url" href="<?php echo esc_url( $logo_url ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" >
+                                <img itemprop="logo" width="<?php echo $logo_width; ?>" height="<?php echo $logo_height; ?>" src="<?php echo $logo['url']; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+                            </a>                    
                         <?php else: ?>
                             <h2 class="site-title" itemprop="headline"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
                             <?php if (ro_get_option('header_description')) { ?>                              

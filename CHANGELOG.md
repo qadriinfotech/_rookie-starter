@@ -14,3 +14,7 @@
 
 ## 1.0.4
 * Improved: SEO Breadcrumbs
+
+## 1.0.5
+* Added: Option to change breadcrumbs text color
+* Fixed: HTML validation if there is no logo applied
