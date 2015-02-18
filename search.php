@@ -15,7 +15,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
     $col = 'col-md-9';
 } ?>
 	<div class="row-fluid">        
-		<div id="primary" class="content-area <?php echo $col; ?>" role="main">
+		<div id="primary" class="content-area <?php echo $col; ?>" itemtype="http://schema.org/SearchResultsPage" itemscope="itemscope">
 			<?php if ( have_posts() ) : ?>
 				<header class="entry-header">
 					<h2 class="search-title"><?php $allsearch = new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count;  echo $count . ' '; wp_reset_query(); ?><?php printf( __( ' Search Results found for' , 'rookie') . '<span class="text-muted"> %s</span>', get_search_query() ); ?></h2>

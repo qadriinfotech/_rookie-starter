@@ -539,11 +539,11 @@ ul li span.menu-toggler {
 }
 
 .top-bar-left span {
-  margin-right: 8px
+  margin-right: 5px
 }
 
 .top-bar-left span i {
-  margin-right: 3px
+  margin-right: 5px
 }
 
 .top-bar-right {
