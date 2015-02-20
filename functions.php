@@ -154,8 +154,11 @@ require_once THEME_DIR . '/includes/breadcrumbs.php';
 
 // Bootstrap nav walker
 require_once THEME_DIR . '/includes/bootstrap-walker.php';
-require_once THEME_DIR . '/includes/mobile-navwalker.php';
 
+// Bootstrap mobile nav walker
+if (wp_is_mobile()) {
+  require_once THEME_DIR . '/includes/mobile-navwalker.php';
+}
 
 // Bootstrap Pagination
 require_once THEME_DIR . '/includes/bootstrap-pagination.php';

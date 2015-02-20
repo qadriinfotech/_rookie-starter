@@ -24,7 +24,7 @@
 <?php global $current_user; ?>
 <h3><?php echo __( 'Welcome to Rookie!', 'rookie' ); ?></h3>
 <p><?php echo __( 'Dear', 'rookie' ); ?> <?php echo $current_user->display_name; ?>,</p>
-<p><?php echo __( 'Thanks for installing <strong>Rookie</strong> We really hope you enjoy using this theme as much as we have enjoyed creating it.<br>We have spent a lot of time to develop/support this theme, if you liked it, Please consider donating so we can keep this as a free theme and add more features in the future. If you cant that is okay as well, We will do our best to make sure you enjoy using our theme!', 'rookie' ); ?></p>
+<p><?php echo __( 'Thanks for installing <strong>Rookie Startar Theme</strong> We really hope you enjoy using this theme as much as we have enjoyed creating it.<br>We have spent a lot of time to develop/support this theme, if you liked it, Please consider donating so we can keep this as a free theme and add more features in the future. If you cant that is okay as well, We will do our best to make sure you enjoy using our theme!', 'rookie' ); ?></p>
 <p><?php echo __( 'Thank you!', 'rookie' ); ?></p>
 <p></p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">

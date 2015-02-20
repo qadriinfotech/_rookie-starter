@@ -20,7 +20,14 @@
         });
 
     // Fire wow.js 
-        new WOW().init();
+        wow = new WOW( {
+            boxClass:     'wow',
+            animateClass: 'animated',
+            offset:       100
+            }
+        );
+
+        wow.init();
 
     // To top
         var offset = 1000;

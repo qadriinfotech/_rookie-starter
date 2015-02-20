@@ -32,7 +32,7 @@
 <?php $logo_url = ro_get_option('logo_custom_url') ? ro_get_option('logo_custom_url') : home_url( '/' ); $logo = ro_get_option('logo') ?>
 <?php if (ro_get_option('sticky_header')) { ?>
 <header id="header-wrap" itemscope="itemscope" itemtype="http://schema.org/Organization" role="banner">
-    <?php } ?>
+<?php } ?>
     <?php if (ro_get_option('hide_top_header')) { ?>
     <?php get_template_part( 'loop/top-header' ); ?>
     <?php } ?>
@@ -61,17 +61,17 @@
                     </div> <!-- Logo -->
                 </div> <!-- navbar-brand -->
             </div> <!-- navbar-header -->
-            <nav id="desktop-menu" class="hidden-xs" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-                <?php desktop_nav(); ?>
-            </nav> <!-- hidden-xs -->
-
-            <?php if ( wp_is_mobile() ) { ?>
-            <nav id="mobile-menu" class="visible-xs" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-                <div class="collapse navbar-collapse">
-                    <?php mobile_nav(); ?>
-                </div>
-            </nav> <!-- visible-xs-->
-            <?php } ?>
+            <?php if ( wp_is_mobile() ) : ?>
+                <nav id="mobile-menu" class="visible-xs" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+                    <div class="collapse navbar-collapse">
+                        <?php mobile_nav(); ?>
+                    </div>
+                </nav> <!-- mobile-menu -->
+            <?php else: ?>
+                <nav id="desktop-menu" class="hidden-xs" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+                    <?php desktop_nav(); ?>
+                </nav> <!-- desktop-menu -->
+            <?php endif; ?>
         </div>  <!-- navbar navbar-default -->
     </nav> <!-- container -->
 </header>  <!-- wrap -->
