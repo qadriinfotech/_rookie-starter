@@ -914,7 +914,7 @@ ul.author-social-bar {
 
 ul.author-social-bar li {
   display: inline-block;
-  margin: 0 1px
+  margin: 0 3px
 }
 
 ul.author-social-bar li a {
