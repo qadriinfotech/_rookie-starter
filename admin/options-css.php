@@ -153,7 +153,7 @@ a:hover, a:active, a:focus {
   color: <?php echo $color_content_meta; ?>;
 }
 
-.author-box {
+.author-bio {
   background: <?php echo $author_bg_color; ?>;
   color: <?php echo $author_txt_color; ?>;
 }  
