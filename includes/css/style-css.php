@@ -873,20 +873,36 @@ ul.post-share-buttons li.twitter iframe { margin:0}
 
 
 /* AUTHOR BOX */
-.author-box {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  padding: 20px;
-  box-shadow: 0 1px 0 #ccc
+.author-bio {
+	padding: 20px 24px 15px 100px;
+	box-shadow: 0 1px 0 #ccc;
+	margin-bottom: 40px;
+	position: relative;
 }
 
-.author-box .author-box-info { padding: 1em 0.5em }
-.author-description { margin-top: 10px }
-.author-description h3.author-name { margin-top: 0}
-.author-social-bar {
-  display: inline-block;
-  padding: 0;
-  font-size: 13px
+.author-bio .bio-avatar {
+	float: left;
+	height: auto;
+	margin: 0 0 8px -80px;
+	position: relative;
+	width: 64px;
+}
+
+.author-bio .bio-avatar img {
+  width: 100%;
+}
+
+.author-bio .bio-name {
+	margin-top: 0
+}
+
+.author-socials {
+	margin-bottom: 5px
+}
+
+ul.author-social-bar {
+	display: inline-block;
+	padding-left: 0px;
 }
 
 .author-social-bar-text {
@@ -898,7 +914,7 @@ ul.post-share-buttons li.twitter iframe { margin:0}
 
 ul.author-social-bar li {
   display: inline-block;
-  margin: 0 3px
+  margin: 0 1px
 }
 
 ul.author-social-bar li a {
@@ -906,11 +922,15 @@ ul.author-social-bar li a {
   color: #fff;
   display: inline-block;
   height: 20px;
-  line-height: 20px;
+  line-height: 18px;
   text-align: center;
   width: 20px;
   transition: all .5s ease 0s;
   -webkit-transition: all .5s ease 0s
+}
+
+ul.author-social-bar i {
+	font-size: 13px;
 }
 
 ul.author-social-bar li a:hover { color: #fff }
