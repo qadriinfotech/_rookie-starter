@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Rookie Startar
+ * @package Rookie
  * @author Abukwaik http://www.croti.com
  * @since rookie 1.0
  */
@@ -134,7 +134,7 @@ function rookie_posted_on() {
 	<?php edit_post_link( __( 'Edit', 'rookie' ), '<span class="edit-link pull-right">', ' <i class="fa fa-pencil"></i></span>' ); ?>
 	<?php
 
-	$time_string = '<time class="entry-date published" ' . Schema_Markup::schema_metadata( array( 'context' => 'entry_time', 'echo' => false )) . '>%2$s</time>';
+	$time_string = '<time class="entry-date published" itemprop="datePublished" datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -161,7 +161,7 @@ function rookie_posted_on() {
 		$time_string .= __(', <span class="updated-on"><i class="fa fa-refresh"></i> updated on</span>', 'rookie') . $time_string_update;
 	}
 
-	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Published on %1$s </span><span class="byline" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> by <i class="fa fa-user"></i> %2$s </span>', 'rookie' ),
+	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Posted %1$s </span><span class="byline" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> by <i class="fa fa-user"></i> %2$s </span>', 'rookie' ),
 		$time_string,
 		sprintf( '<span class="author vcard"><a class="url fn" rel="author" href="%1$s" title="%2$s" itemprop="url"><span itemprop="name"> %3$s </span></a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),

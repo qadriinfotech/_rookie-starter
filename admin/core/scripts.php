@@ -75,7 +75,7 @@ if (ro_get_option ('dynamiclly_load_css') && !is_child_theme() ) {
 else {
 
 	function rookie_stylesheets() {
-		wp_enqueue_style('bootstrap', CSS_URI   . '/bootstrap.css');
+		wp_enqueue_style('bootstrap', CSS_URI   . '/bootstrap.min.css');
 		wp_enqueue_style('style',     CSS_URI   . '/style-css.css');
 	}
 	add_action('wp_enqueue_scripts', 'rookie_stylesheets', 40);

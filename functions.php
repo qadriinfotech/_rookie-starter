@@ -18,7 +18,7 @@ define('THEME_DIR', get_template_directory());
 define('THEME_URI', get_template_directory_uri());
 define('THEME_NAME', 'Rookie Starter');
 define('THEME_SLUG', 'rookie starter');
-define('THEME_VERSION', '1.0.4');
+define('THEME_VERSION', '1.0.6');
 define('THEME_OPTIONS', 'ro_settings');
 define('JS_URI',  THEME_URI . '/includes/js');
 define('CSS_URI', THEME_URI . '/includes/css');
@@ -162,9 +162,6 @@ if (wp_is_mobile()) {
 
 // Bootstrap Pagination
 require_once THEME_DIR . '/includes/bootstrap-pagination.php';
-
-// Schema HTML markup
-require_once THEME_DIR . '/includes/markup.php';
 
 // Custom template tags
 require_once THEME_DIR . '/includes/template-tags.php';
