@@ -5,7 +5,7 @@ Clean WordPress Starter Theme based on bootstrap 3 for use as a starting templat
 Nothing special that much:
 
 * Based on [_s](https://github.com/Automattic/_s)
-* Based on [bootstrap 3.3.2](http://twitter.github.com/bootstrap/)
+* Based on [bootstrap 3.3.4](http://twitter.github.com/bootstrap/)
 * Based on [bones](https://github.com/eddiemachado/bones)
 * 2 navigation menus (header-footer).
 * A powerful theme option panel based on [Redux framework](https://github.com/ReduxFramework/redux-framework) with tons of options.
@@ -15,30 +15,33 @@ Nothing special that much:
 * Custom search result
 * Custom Login
 * Post views
-* 100% Search engine optimized
+* 100% Search Engine Optimized
 * Page speed optimized, Score between 95-100/100 [link](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fstarter.croti.com%2F)
 * HTML5 validation ready [link](http://validator.w3.org/check?uri=http%3A%2F%2Fstarter.croti.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0)
 * CSS3
-* HTML Markup [schema-ready](https://support.google.com/webmasters/answer/99170?hl=en)
+* HTML Markup [schema-ready](https://support.google.com/webmasters/answer/99170?hl=en) Validated by [structured testing tool](https://developers.google.com/structured-data/testing-tool/)
 * Post socials (default buttons)
-* Friendly SEO Breadcrumb
+* Optimized breadcrumbs for SEO
 * Pagination
 * 404 Template
-* Animate.css
-* Font Awesome 4.3
+* Clean commented code
 * Google Fonts
+* Translation ready
 
 And my special gift:
 
 * Starter plugin with 3 shortcodes
 * One-click Demo installation
 
-jQuery plugins:
+Third-Party Plugins:
 
-* jQuery Easing Plugin, v1.3
-* WOW.js - v1.0.2
-* jQuery nicescroll 3.6.0
-* prettyPhoto V3.1.5
+* Animate.css
+* Font Awesome v4.3
+* jQuery Easing Plugin v1.3
+* WOW.js v1.0.3
+* jQuery nicescroll v3.6.0
+* jQuery isotope v2.1.1
+* prettyPhoto v3.1.5
 
 
 ## Screenshot
@@ -46,6 +49,9 @@ jQuery plugins:
 
 ## Demo
 [Demo](http://starter.croti.com/)
+
+## Changelog
+[18-03-2015](https://github.com/abukwaik/_rookie-starter/blob/master/CHANGELOG.md#106)
 
 ## Credit
 

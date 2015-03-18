@@ -22,5 +22,5 @@
 ## 1.0.6
 * Updated: Bootstrap v3.3.4
 * Updated: Redux Framework v3.4.4.2
-* Updated: WOW - v1.0.3
+* updated: WOW - v1.0.3
 * Improved: Schema microformats
