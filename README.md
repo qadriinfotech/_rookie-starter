@@ -40,7 +40,6 @@ Third-Party Plugins:
 * jQuery Easing Plugin v1.3
 * WOW.js v1.0.3
 * jQuery nicescroll v3.6.0
-* jQuery isotope v2.1.1
 * prettyPhoto v3.1.5
 
 
