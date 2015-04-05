@@ -23,6 +23,7 @@
 * Added: Option to change the Navigation Menu Background/link colors
 * Removed: Shortcode featuer
 * Modified: integrated Redux option panel into the theme folder instead of plugin
-* Fixed: Nav Menu not working properly on some mobile devices 
+* Fixed: Nav Menu not working properly on some mobile devices
+* Fixed: NiceScroll version 3.6.0 mouse wheel not working on safari 5.1.7 Thanks @krishnareddy668
 * Fixed: Minor CSS fix.
 * Some minor improvements and fixes.
