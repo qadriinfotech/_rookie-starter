@@ -16,20 +16,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<script>
-    var cb = function() {
-    var l = document.createElement('link'); l.rel = 'stylesheet';
-    l.href = '<?php echo CSS_URI ?>/all.min.css';
-    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);};
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-    webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(cb);
-    else window.addEventListener('load', cb);
-</script>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
-<?php $logo_url = ro_get_option('logo_custom_url') ? ro_get_option('logo_custom_url') : home_url( '/' ); $logo = ro_get_option('logo') ?>
+<?php 
+$logo_url = ro_get_option('logo_custom_url') ? ro_get_option('logo_custom_url') : esc_url( home_url( '/' ) ); 
+$logo = ro_get_option('logo') 
+?>
 <?php if (ro_get_option('sticky_header')) { ?>
 <header id="header-wrap" itemscope="itemscope" itemtype="http://schema.org/Organization" role="banner">
 <?php } ?>
@@ -40,7 +33,7 @@
         <div class="container clearfix">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only"><?php _e('Toggle navigation', 'rookie'); ?></span>
+                    <span class="sr-only"><?php _e('Toggle navigation', 'rookie-startar'); ?></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -50,10 +43,12 @@
                         <?php $logo_width = ro_get_option( 'logo_width', '110' ); $logo_height = ro_get_option( 'logo_height', '30' ); ?>        
                         <?php if(!empty($logo['url'])) : ?>
                             <a itemprop="url" href="<?php echo esc_url( $logo_url ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" >
-                                <img itemprop="logo" width="<?php echo $logo_width; ?>" height="<?php echo $logo_height; ?>" src="<?php echo $logo['url']; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+                                <img itemprop="logo" width="<?php echo $logo_width; ?>" height="<?php echo $logo_height; ?>" src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
                             </a>                    
                         <?php else: ?>
-                            <h2 class="site-title" itemprop="headline"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+                            <h2 class="site-title" itemprop="headline">
+                                <a href="<?php echo esc_url( home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                            </h2>
                             <?php if (ro_get_option('header_description')) { ?>                              
                             <p class="site-desc" itemprop="description"><?php echo get_bloginfo('description'); ?></p>
                             <?php } ?>
@@ -61,17 +56,9 @@
                     </div> <!-- Logo -->
                 </div> <!-- navbar-brand -->
             </div> <!-- navbar-header -->
-            <?php if ( wp_is_mobile() ) : ?>
-                <nav id="mobile-menu" class="visible-xs" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-                    <div class="collapse navbar-collapse">
-                        <?php mobile_nav(); ?>
-                    </div>
-                </nav> <!-- mobile-menu -->
-            <?php else: ?>
-                <nav id="desktop-menu" class="hidden-xs" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-                    <?php desktop_nav(); ?>
-                </nav> <!-- desktop-menu -->
-            <?php endif; ?>
+            <nav id="desktop-menu" class="collapse navbar-collapse navbar-right" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+                <?php main_nav(); ?>
+            </nav> <!-- desktop-menu -->
         </div>  <!-- navbar navbar-default -->
     </nav> <!-- container -->
 </header>  <!-- wrap -->

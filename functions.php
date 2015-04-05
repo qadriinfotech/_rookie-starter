@@ -14,16 +14,16 @@
  *
  */
 
-define('THEME_DIR', get_template_directory());
-define('THEME_URI', get_template_directory_uri());
-define('THEME_NAME', 'Rookie Starter');
-define('THEME_SLUG', 'rookie starter');
-define('THEME_VERSION', '1.0.6');
-define('THEME_OPTIONS', 'ro_settings');
-define('JS_URI',  THEME_URI . '/includes/js');
-define('CSS_URI', THEME_URI . '/includes/css');
-define('IMG_DIR', THEME_DIR . '/images');
-define('IMG_URI', THEME_URI . '/images');
+define('ROOKIE_THEME_DIR', get_template_directory());
+define('ROOKIE_THEME_URI', get_template_directory_uri());
+define('ROOKIE_THEME_NAME', 'Rookie Starter');
+define('ROOKIE_THEME_SLUG', 'rookie starter');
+define('ROOKIE_THEME_VERSION', '1.0.3');
+define('ROOKIE_THEME_OPTIONS', 'ro_settings');
+define('ROOKIE_JS_URI',  ROOKIE_THEME_URI . '/includes/js');
+define('ROOKIE_CSS_URI', ROOKIE_THEME_URI . '/includes/css');
+define('ROOKIE_IMG_DIR', ROOKIE_THEME_DIR . '/images');
+define('ROOKIE_IMG_URI', ROOKIE_THEME_URI . '/images');
 
 if ( ! isset( $content_width )) {
   $content_width = 669; 
@@ -49,11 +49,17 @@ if ( !function_exists( 'rookie_setup' ) ) {
     add_theme_support( 'automatic-feed-links');
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video' ));
-    load_theme_textdomain( 'rookie', THEME_DIR . '/languages' );
-    register_nav_menu( 'primary', 'Primary' );
-    register_nav_menu( 'footer-menu', 'Footer Menu' );
-    add_theme_support('post-thumbnails');
-    add_editor_style( CSS_URI . '/editor-style.css' );
+    add_theme_support( 'post-thumbnails');
+    load_theme_textdomain( 'rookie-startar', ROOKIE_THEME_DIR . '/languages' );
+    add_editor_style( ROOKIE_CSS_URI . '/editor-style.css' );
+
+    // Register Menus
+    register_nav_menus(
+      array(
+        'primary'     => __( 'Primary', 'rookie-startar' ),
+        'footer-menu' => __( 'Footer Menu', 'rookie-startar' ),
+        ) 
+      );
 
     // allows users to set a custom background.
     add_theme_support( 'custom-background', apply_filters( 'twentyfourteen_custom_background_args', array(
@@ -61,11 +67,9 @@ if ( !function_exists( 'rookie_setup' ) ) {
       )));
 
     //add image sizes
-    if ( function_exists('add_image_size')) {
-      add_image_size('featured_image', 669, 272, true);
-      add_image_size('small-thumb',  50, 50, true);
-      add_image_size('full-size', 9999, 9999, false);
-    }
+    add_image_size('rookie-startar-featured_image', 669, 272, true);
+    add_image_size('rookie-startar-small-thumb',  50, 50, true);
+    add_image_size('rookie-startar-full-size', 9999, 9999, false);
   }
 }
 
@@ -90,84 +94,44 @@ function rookie_get_thumb_url($pots_ID){
   return wp_get_attachment_url( get_post_thumbnail_id( $pots_ID ) );
 }
 
-/**
-    Show welcome message and tips
-*/
-function rookie_welcome_msg() {
-  if(!get_option('rookie_welcome_box_displayed')) { 
-    update_option('rookie_theme_version',THEME_VERSION); ?>
-    <div class="updated">
-      <?php include_once(THEME_DIR.'/includes/welcome.php'); ?>
-    </div> 
-  <?php
-  }
-}
-
-/** 
-    Show admin notices
-*/
-function rookie_check_installation(){
-  add_action( 'admin_notices', 'rookie_welcome_msg', 1 );
-}
-add_action( 'admin_init', 'rookie_check_installation' );
-
-// Update latest theme version
-add_action('wp_ajax_rookie_update_version', 'rookie_update_version');
-
-function rookie_update_version(){
-  update_option('rookie_theme_version', THEME_VERSION);
-  die();
-}
-
-// Update latest theme version
-add_action('wp_ajax_rookie_hide_welcome', 'rookie_hide_welcome');
-
-function rookie_hide_welcome(){
-  update_option('rookie_welcome_box_displayed', true);
-  die();
-}
-
 
 /**
     Load Required Files
 **/
-
-// Required rookie functions
-require_once THEME_DIR . '/admin/theme-options.php';
-
-// Rookie Styles and Scripts 
-require_once THEME_DIR . '/admin/core/scripts.php';
-
-// Rookie Sidebars, widgets and menus
-require_once THEME_DIR . '/admin/core/register.php';
-
-// Plugins required
-require_once THEME_DIR . '/admin/plugins-setup.php';
-
-// Custom functions & snippets
-require_once THEME_DIR . '/admin/core/clean.php';
-require_once THEME_DIR . '/admin/core/snippets.php';
-require_once THEME_DIR . '/admin/core/jetpack.php';
-
-// Bootstrap Style Breadcrumbs
-require_once THEME_DIR . '/includes/breadcrumbs.php';
-
-// Bootstrap nav walker
-require_once THEME_DIR . '/includes/bootstrap-walker.php';
-
-// Bootstrap mobile nav walker
-if (wp_is_mobile()) {
-  require_once THEME_DIR . '/includes/mobile-navwalker.php';
+// Load Redux framework admin panel
+if ( !class_exists( 'ReduxFramework' ) ) {
+  require_once ROOKIE_THEME_DIR . '/admin/ReduxCore/framework.php';
+  require_once ROOKIE_THEME_DIR . '/admin/ReduxCore/redux-config.php';
 }
 
+// Required Redux framework functions
+require_once ROOKIE_THEME_DIR . '/admin/theme-options.php';
+
+// Rookie Styles and Scripts 
+require_once ROOKIE_THEME_DIR . '/admin/core/scripts.php';
+
+// Rookie Sidebars, widgets and menus
+require_once ROOKIE_THEME_DIR . '/admin/core/register.php';
+
+// Custom functions & snippets
+require_once ROOKIE_THEME_DIR . '/admin/core/clean.php';
+require_once ROOKIE_THEME_DIR . '/admin/core/snippets.php';
+require_once ROOKIE_THEME_DIR . '/admin/core/jetpack.php';
+
+// Bootstrap Style Breadcrumbs
+require_once ROOKIE_THEME_DIR . '/includes/breadcrumbs.php';
+
+// Bootstrap nav walker
+require_once ROOKIE_THEME_DIR . '/includes/bootstrap-walker.php';
+
 // Bootstrap Pagination
-require_once THEME_DIR . '/includes/bootstrap-pagination.php';
+require_once ROOKIE_THEME_DIR . '/includes/bootstrap-pagination.php';
 
 // Custom template tags
-require_once THEME_DIR . '/includes/template-tags.php';
+require_once ROOKIE_THEME_DIR . '/includes/template-tags.php';
 
 // Implement Custom Header features.
-require_once THEME_DIR . '/includes/custom-header.php';
+require_once ROOKIE_THEME_DIR . '/includes/custom-header.php';
 
 // Social share
-require_once THEME_DIR . '/includes/social-share.php';
+require_once ROOKIE_THEME_DIR . '/includes/social-share.php';

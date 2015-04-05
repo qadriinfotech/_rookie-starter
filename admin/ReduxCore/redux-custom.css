@@ -1,0 +1,71 @@
+#redux-header h2 {color:#fff;font-size:21px;line-height:21px}
+#redux-header .dashicons{color:#fff!important;font-size:21px;margin-right:10px;line-height:21px;width:auto;height:auto}
+.redux-sidebar .redux-group-menu li a{font-size:13px;font-weight:600}
+.redux-group-tab-link-a span.group_title{padding-left:25px}
+.redux-sidebar .redux-group-tab-link-a i{font-size:13px;margin-top:2px}
+.redux-group-tab .form-table tr th{font-size:13px;line-height:1.5}
+.form-wrap p,.redux-group-tab .form-table tr th .redux-main span.description,p.description,p.help,span.description {font-size:12px}
+.redux-group-tab h3{font-size:1.8em;font-weight:400;padding-bottom:15px;margin-bottom:0}
+.redux-container-switch .cb-disable span,.redux-container-switch .cb-enable span{font-size:12px;font-weight:600}
+.redux-container-color_gradient strong,.redux-container-link_color{font-size:12px}
+.redux-container .form-table td{vertical-align:top}.redux-group-tab .form-table{margin-top:30px}
+.redux-group-menu{margin-bottom:60px}
+.redux-sidebar .redux-group-menu li a{border-bottom-color:#ddd;border-top:0;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;width:100%}
+.redux-sidebar .redux-group-menu li a:hover{background:#eee;width:auto;color:#908dbd;margin-right:0;opacity:1}
+.redux-sidebar .redux-group-menu li.active{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;margin-right:-2px}
+.redux-sidebar .redux-group-menu li.active a{background:#fff;width:100%}
+.redux-sidebar .redux-group-menu li.active a:hover{background:#fff;border-right:0}
+.redux-container #info_bar{border-left:none;border-right:none;padding:12px 10px}
+.redux-container .select2-container .select2-choice{font-size:12px}
+.redux-container #redux-sticky b,.redux-container #redux-sticky strong{font-weight:400}
+#redux-footer{border-top:1px solid #ddd;padding:10px}
+.redux-group-tab .form-table tr th{padding-right:30px}
+.redux-main{background:#fff}.redux-main input,.redux-main select,.redux-main textarea{background:#f9f9f9;border-color:#ddd;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
+.redux-main input:focus,.redux-main input:hover,.redux-main select:focus,.redux-main select:hover,.redux-main textarea:focus,.redux-main textarea:hover{background:#fff;}
+.redux-sortable input{margin-bottom:3px}
+.redux-sortable label{font-weight:400;font-size:12px;margin-bottom:5px;color:#777}
+#wpex_options-site_theme li.redux-image-select{max-width:280px;padding:0;margin-right:20px!important;margin-bottom:0!important;float:left}
+#wpex_options-site_theme li.redux-image-select img{width:100%}
+.redux-container-ace_editor .ace_editor{}.import-export-divide{display:none!important}
+.redux-info-field{margin-top:20px;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;background:#eee;border-color:#ddd}
+.redux-info-field.redux-normal{border-color:#ddd!important}
+.admin-color-fresh #redux-header {background: none repeat scroll 0 0 #615e95; border-color: #333;}
+.redux-container-image_select .redux-image-select span{max-width: 100px;}
+#redux-header .display_header {width: 99%;}
+#redux-header .display_header h2 {float: left;}
+#redux-header .display_header span {float: right; margin: 13px 0 0;}
+#redux-intro-text{display: none;}
+.redux-container .redux-section-field h3,
+.redux-group-tab > h3 {
+	background: #f1f1f1;
+	padding: 15px;
+	margin: 20px 0 0;
+	color: #333;
+	border: none !important
+}
+.redux_field_th span{max-width: 250px; line-height: 1.4em;}
+.redux_field_th {max-width: 250px;}
+.redux-main {padding: 20px 30px;}
+.redux-container .redux-group-tab .redux-section-desc {
+	background: #f8f8f8;
+	padding: 10px;
+	position: relative
+}
+.redux-container .redux-group-tab .redux-section-desc:before {
+	font-family: 'Elusive-Icons';
+	content: "\f18e";
+	font-size: 18px;
+	margin: 0 5px 0 0;
+	color: #999;
+	float: left
+}
+
+.redux-container #redux-header, .redux-container #redux-footer {
+    margin-top: 2em
+}
+
+.redux-container-image_select ul.redux-image-select li {vertical-align: top;}
+.redux-container-image_select .redux-image-select span span {font-size: 80%; display: block;}
+.redux-container .expand_options { display: none }
+.redux-main .input-append .add-on { float: none }
+

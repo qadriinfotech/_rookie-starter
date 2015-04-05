@@ -23,11 +23,11 @@ function rookie_comment_nav() {
 	<nav class="comment-navigation" role="navigation">
 		<ul class="pager">
 			<?php
-			if ( $prev_link = get_previous_comments_link( __( '<i class="fa fa-chevron-left fa-fw"></i> Older Comments', 'rookie' ) ) ) :
+			if ( $prev_link = get_previous_comments_link( __( '<i class="fa fa-chevron-left fa-fw"></i> Older Comments', 'rookie-startar' ) ) ) :
 				printf( '<li class="nav-previous previous">%s</li>', $prev_link );
 			endif;
 
-			if ( $next_link = get_next_comments_link( __( 'Newer Comments <i class="fa fa-chevron-right fa-fw"></i>', 'rookie' ) ) ) :
+			if ( $next_link = get_next_comments_link( __( 'Newer Comments <i class="fa fa-chevron-right fa-fw"></i>', 'rookie-startar' ) ) ) :
 				printf( '<li class="nav-next next">%s</li>', $next_link );
 			endif;
 			?>
@@ -69,17 +69,17 @@ function rookie_content_nav( $nav_id ) {
 
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 
-				<?php previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="meta-nav">' . __( '<i class="fa fa-chevron-left"></i>', 'Previous post link', 'rookie' ) . '</span> %title' ); ?>
-				<?php next_post_link( '<li class="nav-next next">%link</li>', '%title <span class="meta-nav">' . __( '<i class="fa fa-chevron-right"></i>', 'Next post link', 'rookie' ) . '</span>' ); ?>
+				<?php previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="meta-nav">' . __( '<i class="fa fa-chevron-left"></i>', 'Previous post link', 'rookie-startar' ) . '</span> %title' ); ?>
+				<?php next_post_link( '<li class="nav-next next">%link</li>', '%title <span class="meta-nav">' . __( '<i class="fa fa-chevron-right"></i>', 'Next post link', 'rookie-startar' ) . '</span>' ); ?>
 
 			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 				<?php if ( get_next_posts_link() ) : ?>
-					<li class="nav-previous previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'rookie' ) ); ?></li>
+					<li class="nav-previous previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'rookie-startar' ) ); ?></li>
 				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>
-					<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'rookie' ) ); ?></li>
+					<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'rookie-startar' ) ); ?></li>
 				<?php endif; ?>
 
 			<?php endif; ?>
@@ -107,11 +107,11 @@ function rookie_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation">
-		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'rookie' ); ?></h3>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'rookie-startar' ); ?></h3>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _e( '<i class="fa fa-chevron-left"></i> %title', 'Previous post link', 'rookie' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _e( '%title <i class="fa fa-chevron-right"></i>', 'Next post link',     'rookie' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _e( '<i class="fa fa-chevron-left"></i> %title', 'Previous post link', 'rookie-startar' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _e( '%title <i class="fa fa-chevron-right"></i>', 'Next post link',     'rookie-startar' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -129,9 +129,9 @@ if ( ! function_exists( 'rookie_posted_on' ) ) :
 function rookie_posted_on() {
 
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		printf( '<span class="sticky-post"><i class="fa fa-star"></i> %s </span>', __( 'Featured', 'rookie' ) );
+		printf( '<span class="sticky-post"><i class="fa fa-star"></i> %s </span>', __( 'Featured', 'rookie-startar' ) );
 	} ?>
-	<?php edit_post_link( __( 'Edit', 'rookie' ), '<span class="edit-link pull-right">', ' <i class="fa fa-pencil"></i></span>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'rookie-startar' ), '<span class="edit-link pull-right">', ' <i class="fa fa-pencil"></i></span>' ); ?>
 	<?php
 
 	$time_string = '<time class="entry-date published" itemprop="datePublished" datetime="%1$s">%2$s</time>';
@@ -158,14 +158,14 @@ function rookie_posted_on() {
 			esc_attr( get_the_time() ),
 			$time_string_update
 		);
-		$time_string .= __(', <span class="updated-on"><i class="fa fa-refresh"></i> updated on</span>', 'rookie') . $time_string_update;
+		$time_string .= __(', <span class="updated-on"><i class="fa fa-refresh"></i> updated on</span>', 'rookie-startar') . $time_string_update;
 	}
 
-	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Posted %1$s </span><span class="byline" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> by <i class="fa fa-user"></i> %2$s </span>', 'rookie' ),
+	printf( __( '<span class="posted-on"><i class="fa fa-calendar"></i> Posted %1$s </span><span class="byline" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> by <i class="fa fa-user"></i> %2$s </span>', 'rookie-startar' ),
 		$time_string,
 		sprintf( '<span class="author vcard"><a class="url fn" rel="author" href="%1$s" title="%2$s" itemprop="url"><span itemprop="name"> %3$s </span></a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'rookie' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'rookie-startar' ), get_the_author() ) ),
 			esc_html( get_the_author() )
 		)
 	);
@@ -185,25 +185,25 @@ function rookie_entry_footer() {
 
 	if ( 'post' == get_post_type() ) {
 
-		$categories_list = get_the_category_list( __( ', ', 'rookie' ) );
+		$categories_list = get_the_category_list( __( ', ', 'rookie-startar' ) );
 		if ( $categories_list && rookie_categorized_blog()) { ?>
 			<span class="cat-links">
-				<i class="fa fa-folder-open" title="<?php __( 'Categories', 'rookie' ); ?>"></i>
-				<?php printf( __( 'Categories %1$s ', 'rookie' ), $categories_list ); ?>
+				<i class="fa fa-folder-open" title="<?php __( 'Categories', 'rookie-startar' ); ?>"></i>
+				<?php printf( __( 'Categories %1$s ', 'rookie-startar' ), $categories_list ); ?>
 			</span>
 		<?php } 
 
-		$tags_list = get_the_tag_list( '', __( ', ', 'rookie' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'rookie-startar' ) );
 		if ( $tags_list ) { ?>
 			<span class="tags-links">
-				<i class="fa fa-tags" title="<?php __( 'Tags', 'rookie' ); ?>"></i>
-				<?php printf( __( 'Tagged in %1$s ', 'rookie' ), $tags_list ); ?>
+				<i class="fa fa-tags" title="<?php __( 'Tags', 'rookie-startar' ); ?>"></i>
+				<?php printf( __( 'Tagged in %1$s ', 'rookie-startar' ), $tags_list ); ?>
 			</span>
 		<?php }
 
 		if (ro_get_option ('post_views')) { ?>
 			<span class="post-views" itemprop="interactionCount"><i class="fa fa-eye"></i>
-				<?php echo getPostViews(get_the_ID()); ?>
+				<?php echo rookie_getPostViews(get_the_ID()); ?>
 			</span>
 		<?php }
 
@@ -211,7 +211,7 @@ function rookie_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
 		<span class="comments-link" itemprop="interactionCount"><i class="fa fa-comment"></i>
-			<?php comments_popup_link( __( 'Leave a comment ', 'rookie' ), __( '1 Comment', 'rookie' ), __( '% Comments ', 'rookie' ) ); ?>
+			<?php comments_popup_link( __( 'Leave a comment ', 'rookie-startar' ), __( '1 Comment', 'rookie-startar' ), __( '% Comments ', 'rookie-startar' ) ); ?>
 		</span>
 	<?php }
 }
@@ -228,7 +228,7 @@ if ( ! function_exists( 'rookie_link_format_helper' ) ) :
 function rookie_link_format_helper( $output = false ) {
 
 	if ( ! $output )
-		_doing_it_wrong( __FUNCTION__, __( 'You must specify the output you want - either "link" or "post_content".', 'rookie' ), '1.0.1' );
+		_doing_it_wrong( __FUNCTION__, __( 'You must specify the output you want - either "link" or "post_content".', 'rookie-startar' ), '1.0.1' );
 
 	$post_content = get_the_content();
 	$link_start = stristr( $post_content, "http" );
@@ -367,24 +367,23 @@ function rookie_post_thumbnail() {
 		return;
 	}
 
-	if ( is_singular() ) :
-	?>
+	if ( is_singular() ) : ?>
 
 	<?php 
 	$full_img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full-size');
 	$img_src= $full_img[0];
 	?>
 	<div class="post-thumbnail" itemscope="itemscope" itemtype='http://schema.org/ImageObject'>
-	  <a href="<?php echo $img_src; ?>" itemprop="image" title="<?php the_title_attribute(); ?>">
-	    <?php the_post_thumbnail( 'rookie-featured', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
-	  </a>
+		<a href="<?php echo $img_src; ?>" itemprop="image" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail( 'post-thumbnailpost-thumbnailpost-thumbnailpost-thumbnail', array( 'class' => 'single-featured', 'itemprop' => 'thumbnailUrl' )); ?>
+		</a>
 	</div>
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 		<?php
-			the_post_thumbnail( 'post-thumbnail', array( 'class' => 'single-featured','itemprop' => 'thumbnailUrl' , 'alt' => get_the_title() ) );
+		the_post_thumbnail( 'post-thumbnail', array( 'class' => 'single-featured','itemprop' => 'thumbnailUrl' , 'alt' => get_the_title() ) );
 		?>
 	</a>
 

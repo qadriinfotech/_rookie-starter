@@ -19,12 +19,12 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s', 'rookie' ),
+				__( 'Continue reading %s', 'rookie-startar' ),
 				the_title( '<span class="screen-reader-text">', '</span>', false )
 				) );
 
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie-startar' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
@@ -35,6 +35,6 @@
 		?>
 	</div>
 
-	<?php edit_post_link( __( 'Edit', 'rookie' ), '<footer class="entry-footer"><span class="edit-link">', ' <i class="fa fa-pencil"></i></span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'rookie-startar' ), '<footer class="entry-footer"><span class="edit-link">', ' <i class="fa fa-pencil"></i></span></footer>' ); ?>
 
 </article><!-- #post-## -->

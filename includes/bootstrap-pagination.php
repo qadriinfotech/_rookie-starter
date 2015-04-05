@@ -15,12 +15,12 @@
 if( ! function_exists('rookie_pagination')) {
 	function rookie_pagination( $args = array() ) {
 		$defaults = array(
-			'range' => 4,
-			'custom_query' => FALSE,
-			'previous_string' => '<i class="fa fa-chevron-left"></i>', 'rookie',
-			'next_string' => '<i class="fa fa-chevron-right"></i>', 'rookie',
-			'before_output' => '<div class="post-nav"><ul class="pager">',
-			'after_output' => '</ul></div>'
+			'range'     	  => 4,
+			'custom_query'    => FALSE,
+			'previous_string' => '<i class="fa fa-chevron-left"></i>', 'rookie-startar',
+			'next_string' 	  => '<i class="fa fa-chevron-right"></i>', 'rookie-startar',
+			'before_output'   => '<div class="post-nav"><ul class="pager">',
+			'after_output' 	  => '</ul></div>'
 			);
 		$args = wp_parse_args(
 			$args,
@@ -55,9 +55,9 @@ if( ! function_exists('rookie_pagination')) {
 		$previous = esc_attr( get_pagenum_link($previous) );
 		$firstpage = esc_attr( get_pagenum_link(1) );
 		if ( $firstpage && (1 != $page) )
-			$echo .= '<li class="previous"><a href="' . $firstpage . '">' . __( 'First', 'rookie' ) . '</a></li>';
+			$echo .= '<li class="previous"><a href="' . $firstpage . '">' . __( 'First', 'rookie-startar' ) . '</a></li>';
 		if ( $previous && (1 != $page) )
-			$echo .= '<li><a href="' . $previous . '" title="' . __( 'previous', 'rookie') . '">' . $args['previous_string'] . '</a></li>';
+			$echo .= '<li><a href="' . $previous . '" title="' . __( 'previous', 'rookie-startar') . '">' . $args['previous_string'] . '</a></li>';
 		if ( !empty($min) && !empty($max) ) {
 			for( $i = $min; $i <= $max; $i++ ) {
 				if ($page == $i) {
@@ -70,10 +70,10 @@ if( ! function_exists('rookie_pagination')) {
 		$next = intval($page) + 1;
 		$next = esc_attr( get_pagenum_link($next) );
 		if ($next && ($count != $page) )
-			$echo .= '<li><a href="' . $next . '" title="' . __( 'next', 'rookie') . '">' . $args['next_string'] . '</a></li>';
+			$echo .= '<li><a href="' . $next . '" title="' . __( 'next', 'rookie-startar') . '">' . $args['next_string'] . '</a></li>';
 		$lastpage = esc_attr( get_pagenum_link($count) );
 		if ( $lastpage ) {
-			$echo .= '<li class="next"><a href="' . $lastpage . '">' . __( 'Last', 'rookie' ) . '</a></li>';
+			$echo .= '<li class="next"><a href="' . $lastpage . '">' . __( 'Last', 'rookie-startar' ) . '</a></li>';
 		}
 		if ( isset($echo) )
 			echo $args['before_output'] . $echo . $args['after_output'];

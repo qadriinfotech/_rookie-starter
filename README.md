@@ -28,11 +28,6 @@ Nothing special that much:
 * Google Fonts
 * Translation ready
 
-And my special gift:
-
-* Starter plugin with 3 shortcodes
-* One-click Demo installation
-
 Third-Party Plugins:
 
 * Animate.css

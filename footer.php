@@ -21,19 +21,19 @@
     </footer>
 <?php endif; ?>
 <?php if(ro_get_option('enable_footer_social')) : ?>
-    <?php footer_socials(); ?>
+    <?php rookie_startar_footer_socials(); ?>
 <?php endif; ?>
-<?php if(ro_get_option('enable_copyright')) : ?>
+<?php if (ro_get_option('enable_copyright')) : ?>
     <footer class="footer-bottom-wrapper" itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
         <div class="container-fluid clearfix">
             <div class="row-fluid">         
                 <div class="copyright-text col-md-6">
-                    <?php _e( 'Copyright &copy; ', 'rookie' ); ?>
+                    <?php _e( 'Copyright &copy; ', 'rookie-startar' ); ?>
                     <span itemprop="copyrightYear">
                         <?php echo date( 'Y' ); ?>
                     </span>
-                    <a href="<?php echo home_url() ?>" itemprop="url"><span itemprop="copyrightHolder"><?php echo esc_attr( get_bloginfo( 'name' ) ); ?></span></a>
-                    <?php _e( 'All rights reserved.', 'rookie' ); ?>
+                    <a href="<?php echo esc_url( home_url() ); ?>" itemprop="url"><span itemprop="copyrightHolder"><?php echo esc_attr( get_bloginfo( 'name' ) ); ?></span></a>
+                    <?php _e( 'All rights reserved.', 'rookie-startar' ); ?>
                 </div> 
                 <nav class="footer-nav col-md-6" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
                     <?php if (has_nav_menu('footer-menu') && ro_get_option('enable_footer_menu')) : ?>

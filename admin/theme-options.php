@@ -3,8 +3,10 @@
  *
  * Redux framework functions
  *
- * @package Rookie Startar
+ * @package admin panel functions
  * @author Abukwaik http://www.croti.com
+ * @copyright Copyright (c) 2015, Rookie
+ * @link http://www.croti.com
  * @since rookie 1.0
  */
 
@@ -13,55 +15,55 @@
 	Change customizer link
 */
 /* Change customize link to theme options instead of live customizer */
-function change_customize_link($themes) {
+function ro_change_customize_link($themes) {
 	if(array_key_exists('_rookie-starter', $themes)) {
 		$themes['_rookie-starter']['actions']['customize'] = admin_url('admin.php?page=rookie_options');
 	}
 	return $themes;
 }
-add_filter('wp_prepare_themes_for_js', 'change_customize_link');
+add_filter('wp_prepare_themes_for_js', 'ro_change_customize_link');
 
 
 /**
 	Theme option function
 */
 
-/* Generate theme option CSS */
-function generate_option_css(){
+/* Generate theme option compressed CSS */
+function ro_generate_option_css(){
 	ob_start();
 	get_template_part('admin/options-css');
 	$output = ob_get_contents();
 	ob_end_clean();
-	return compress_css_code($output);
+	return ro_compress_css_code($output);
 }
 /* add to head including favicons and custom css */
-function rookie_wp_head(){
+function ro_generate_option_to_head(){
 	// Add favicons
 	if($favicon = ro_get_option_media('favicon')) {
-		echo '<link rel="shortcut icon" href="'.$favicon.'" type="image/x-icon" />';
+		echo '<link rel="shortcut icon" href="' . $favicon . '" type="image/x-icon" />';
 	}
 
 	// Add apple touch icon
 	if($apple_touch_icon = ro_get_option_media('apple_touch_icon')) {
-		echo '<link rel="apple-touch-icon" href="'.$apple_touch_icon.'" />';
+		echo '<link rel="apple-touch-icon" href="' . $apple_touch_icon . '" />';
 	}
 
 	// Theme option CSS output
-	$option_css = trim(preg_replace( '/\s+/', ' ', generate_option_css()));
+	$option_css = trim(preg_replace( '/\s+/', ' ', ro_generate_option_css()));
 	if(!empty($option_css)) {
-		echo '<style media="all" type="text/css">'.$option_css.'</style>';
+		echo '<style media="all" type="text/css">' . $option_css . '</style>';
 	}
 	// Custom CSS
 	$custom_css = trim(preg_replace( '/\s+/', ' ', ro_get_option('custom_css')));
 	if(!empty($custom_css)) {
-		echo '<style media="all" type="text/css">'.$custom_css.'</style>';
+		echo '<style media="all" type="text/css">' . $custom_css . '</style>';
 	}
 }
-add_action('wp_head', 'rookie_wp_head', 99);
+add_action('wp_head', 'ro_generate_option_to_head', 99);
 
 
 /* Compress CSS output */
-function compress_css_code($code) {
+function ro_compress_css_code($code) {
 	// Remove Comments
 	$code = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $code);
 
@@ -95,9 +97,9 @@ function ro_login_logo() {
   if(!empty($custom_login_logo)) {
     echo '
     <style type="text/css">
-      body.login #login h1 a { background: url('.esc_url($custom_login_logo).') no-repeat top transparent;
+      body.login #login h1 a { background: url(' . esc_url($custom_login_logo) . ') no-repeat top transparent;
         height:10vh; width:100%; }
-        body.login { background-image: url('.esc_url($custom_login_bg).');
+        body.login { background-image: url(' . esc_url($custom_login_bg) . ');
         background-repeat: no-repeat; background-size: cover; }
         .login form { box-shadow: 0 1px 5px rgba(0, 0, 0, 0.20); }
     </style>';

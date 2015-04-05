@@ -17,7 +17,7 @@
 	<p class="bio-desc"><?php echo get_the_author_meta('description'); ?></p>
 	<?php if (ro_get_option('author_socials')) { ?>
 	<div class="author-socials">
-		<?php author_socials(); ?>
+		<?php rookie_startar_author_socials(); ?>
 	</div>
 	<?php } ?>
 </div>

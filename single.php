@@ -21,7 +21,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 	<div id="primary" class="content-area <?php echo $col; ?>">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'loop/content', 'single', get_post_format() ); ?>
-			<?php setPostViews(get_the_ID()); ?>
+			<?php rookie_setPostViews(get_the_ID()); ?>
 			<?php if (ro_get_option('post_navigation')) { ?>
 			<?php rookie_content_nav( 'nav-below' ); ?>
 			<?php } ?>

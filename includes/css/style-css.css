@@ -380,16 +380,16 @@ img.alignleft {
   border-color: #eee
 }
 
-.hidden-xs .navbar-nav > .open > a, 
-.hidden-xs .navbar-nav > .open > a:focus, 
-.hidden-xs .navbar-nav > .open > a:hover,
+#desktop-menu .navbar-nav > .open > a, 
+#desktop-menu .navbar-nav > .open > a:focus, 
+#desktop-menu .navbar-nav > .open > a:hover,
 
-.hidden-xs .navbar-nav > .active > a, 
-.hidden-xs .navbar-nav > .active > a:focus, 
-.hidden-xs .navbar-nav > .active > a:hover,
+#desktop-menu .navbar-nav > .active > a, 
+#desktop-menu .navbar-nav > .active > a:focus, 
+#desktop-menu .navbar-nav > .active > a:hover,
 
-.hidden-xs .navbar-nav > li > a:focus, 
-.hidden-xs .navbar-nav > li > a:hover,
+#desktop-menu .navbar-nav > li > a:focus, 
+#desktop-menu .navbar-nav > li > a:hover,
 
 .nav .open > a, 
 .nav .open > a:focus, 
@@ -438,31 +438,31 @@ img.alignleft {
   overflow-y: auto
 }
 
-.visible-xs .navbar-collapse .navbar-nav > li a {
+#mobile-menu .navbar-collapse .navbar-nav > li a {
   color: #777;
   display: block;
   padding: 5px 10px;
   cursor: pointer
 }
 
-.visible-xs .navbar-nav > li a:hover,
-.visible-xs .navbar-nav > li a:focus,
-.visible-xs .navbar-nav > li a:active{
+#mobile-menu .navbar-nav > li a:hover,
+#mobile-menu .navbar-nav > li a:focus,
+#mobile-menu .navbar-nav > li a:active{
   background-color: #b2afe8;
   color: #fff
 }
 
-.visible-xs .navbar-collapse .navbar-nav > .active > a, 
-.visible-xs .navbar-collapse .navbar-nav > .active > a:focus, 
-.visible-xs .navbar-collapse .navbar-nav > .active > a:hover,
+#mobile-menu .navbar-collapse .navbar-nav > .active > a, 
+#mobile-menu .navbar-collapse .navbar-nav > .active > a:focus, 
+#mobile-menu .navbar-collapse .navbar-nav > .active > a:hover,
 
-.visible-xs .navbar-collapse .navbar-nav > li > a:focus, 
-.visible-xs .navbar-collapse .navbar-nav > li > a:hover {
+#mobile-menu .navbar-collapse .navbar-nav > li > a:focus, 
+#mobile-menu .navbar-collapse .navbar-nav > li > a:hover {
   background-color: #b2afe8;
   color: #fff
 }
 
-.visible-xs .navbar-collapse .navbar-nav ul {
+#mobile-menu .navbar-collapse .navbar-nav ul {
   list-style: none;
   padding: 5px 0 0 20px
 }
@@ -576,7 +576,7 @@ ul li span.menu-toggler {
 #top-bar-social a .fa-rss:hover { color: #ffac3d }
 
 .logo { margin-top: 10px }
-.logo h2.site-title { margin: 5px 0 }
+.logo h2.site-title { margin:5px 0 }
 
 .is-sticky {
   z-index: 9999;
@@ -623,10 +623,9 @@ ul li span.menu-toggler {
 
 /* CONTENT */
 .single-featured {
-  -webkit-transition: opacity .3s linear;
-  transition: opacity .3s linear;
   display: block;
-  margin: auto
+  margin: auto;
+  transition: opacity 0.3s linear 0s
 }
 
 .single-featured:hover {
@@ -1263,16 +1262,4 @@ img.footer-logo {
   .error-message {
     font-size: 30px
   }
-}
-
-/* SHORTCODES */
-ul.list-arrow {
-  padding-left: 20px
-}
-
-ul.list-arrow li:before {
-  content: "\f00c";
-  font-family: FontAwesome;
-  margin-right: 5px;
-  color: green
 }

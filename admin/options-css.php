@@ -24,6 +24,8 @@
   $a_color_header_hov = ro_get_option('a_color_header_hov');
   $header_bg_img = ro_get_option_media('header_bg_img');
   $header_bg_style = ro_get_option('header_bg_style');
+  $color_nav_bg = ro_get_option('color_nav_bg');
+  $color_nav_a = ro_get_option('color_nav_a');
 
   // Sub Header
   $sub_header_bg_img = ro_get_option_media('sub_header_bg_img');
@@ -35,17 +37,16 @@
   //Body
   $color_a_text = ro_get_option('color_a_text');
   $color_a_hov = ro_get_option('color_a_hov');
-
   $color_body_boxed_bg = ro_get_option('color_body_boxed_bg');
   $body_bg_img = ro_get_option_media('body_bg_img');
   $body_bg_style = ro_get_option('body_bg_style');
 
   //Content
   $color_content_bg = ro_get_option('color_content_bg');
-  $color_content_txt_h = ro_get_option('color_content_txt_h');
+  $color_entry_title_a = ro_get_option('color_entry_title_a');
+  $color_entry_title_a_h = ro_get_option('color_entry_title_a_h');
   $color_content_txt = ro_get_option('color_content_txt');
   $color_content_meta = ro_get_option('color_content_meta');
-
   $author_bg_color = ro_get_option('author_bg_color');
   $author_txt_color = ro_get_option('author_txt_color');
 
@@ -57,10 +58,10 @@
 
   //Footer
   $color_footer_bg = ro_get_option('color_footer_bg');
+  $color_footer_txt_a = ro_get_option('color_footer_txt_a');
   $color_footer_txt_h = ro_get_option('color_footer_txt_h');
   $color_footer_txt = ro_get_option('color_footer_txt');
   $color_footer_txt_hov = ro_get_option('color_footer_txt_hov');
-
 ?>
 
 
@@ -85,6 +86,31 @@
 
 .external-link a:hover {
   color: <?php echo $a_color_header_hov; ?>;
+}
+
+#desktop-menu .navbar-nav > .open > a, 
+#desktop-menu .navbar-nav > .open > a:focus, 
+#desktop-menu .navbar-nav > .open > a:hover, 
+
+#desktop-menu .navbar-nav > .active > a, 
+#desktop-menu .navbar-nav > .active > a:focus, 
+#desktop-menu .navbar-nav > .active > a:hover, 
+
+#desktop-menu .navbar-nav > li > a:focus, 
+#desktop-menu .navbar-nav > li > a:hover, 
+
+.nav .open > a, 
+.nav .open > a:focus, 
+.nav .open > a:hover, 
+
+.dropdown-menu > li > a:focus, 
+.dropdown-menu > li > a:hover, 
+
+.dropdown-menu > .active > a, 
+.dropdown-menu > .active > a:focus, 
+.dropdown-menu > .active > a:hover {
+  background-color: <?php echo $color_nav_bg; ?>;
+  color: <?php echo $color_nav_a; ?>;
 }
 
 #sub-header {
@@ -145,19 +171,22 @@ a:hover, a:active, a:focus {
   background-color: <?php echo $color_content_bg; ?>;
 }
 
-.entry-title {
-  color: <?php echo $color_content_txt_h; ?>;
+.entry-title a {
+  color: <?php echo $color_entry_title_a; ?>;
+}
+
+.entry-title a:hover {
+  color: <?php echo $color_entry_title_a_h; ?>;
 }
 
 .entry-footer, .entry-meta {
   color: <?php echo $color_content_meta; ?>;
 }
 
-.author-bio {
+.author-box {
   background: <?php echo $author_bg_color; ?>;
   color: <?php echo $author_txt_color; ?>;
 }  
-
 
 <?php // Sidebar Area ////////////////////////////////////////////// ?>
 
@@ -180,19 +209,21 @@ a:hover, a:active, a:focus {
 
 <?php // Footer Area ////////////////////////////////////////////// ?>
 
-.footer-wrapper {
+.footer-wrapper, #footer-socials, .footer-bottom-wrapper {
   background-color: <?php echo $color_footer_bg; ?>;
+  color: <?php echo $color_footer_txt; ?>;
 }
 
 .footer-widget-title {
   color: <?php echo $color_footer_txt_h; ?>;
 }
 
-.footer-wrapper a {
-  color: <?php echo $color_footer_txt; ?>;
+.footer-wrapper a, #footer-socials a, .footer-bottom-wrapper a {
+  color: <?php echo $color_footer_txt_a; ?>;
 }
 
-.footer-wrapper a:hover, a:active, a:focus {
+.footer-wrapper a:hover, a:active, a:focus,
+.footer-bottom-wrapper a:hover, a:active, a:focus {
   color: <?php echo $color_footer_txt_hov; ?>;
 }
 

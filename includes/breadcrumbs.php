@@ -27,7 +27,7 @@ function rookie_breadcrumb_lists() {
     }
 
     elseif (is_home()) {
-        $title = get_option('page_for_posts') ? get_the_title(get_option('page_for_posts')) : __('Blog', 'rookie');
+        $title = get_option('page_for_posts') ? get_the_title(get_option('page_for_posts')) : __('Blog', 'rookie-startar');
         echo '<div id="breadcrumbs"><a href="' . $home_link . '">' . $home . '</a> \ ' . $title . '</div>';
     } 
 
@@ -49,11 +49,11 @@ function rookie_breadcrumb_lists() {
             }
             $category_id = get_cat_ID(single_cat_title('', false));
             $category_link = get_category_link($category_id);
-            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $category_link . '"></a>' . '<span itemprop="title">' . __('Archive by category: "', 'rookie') . single_cat_title('', false) . '"</span>' . '</span>';
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $category_link . '"></a>' . '<span itemprop="title">' . __('Archive by category: "', 'rookie-startar') . single_cat_title('', false) . '"</span>' . '</span>';
         }
 
         elseif (is_search()) {
-            echo __('Search results for: "', 'rookie') . get_search_query() . __('"', 'rookie');
+            echo __('Search results for: "', 'rookie-startar') . get_search_query() . __('"', 'rookie-startar');
         }
 
         elseif (is_single() && !is_attachment()) {
@@ -111,15 +111,15 @@ function rookie_breadcrumb_lists() {
             if ($tag_id) {
                 $tag_link = get_tag_link($tag_id->term_id);
             }
-            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $tag_link . '"></a><span itemprop="title">' . __('Posts tagged: "', 'rookie') . single_tag_title('', false) . '"</span>' . '</span>';
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . $tag_link . '"></a><span itemprop="title">' . __('Posts tagged: "', 'rookie-startar') . single_tag_title('', false) . '"</span>' . '</span>';
         }
         elseif (is_author()) {
             global $author;
             $userdata = get_userdata($author);
-            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_author_posts_url($userdata->ID) . '"></a><span itemprop="title">' . __('Author', 'rookie') . ': "' . $userdata->display_name . '"</span>' . '</span>';
+            echo '<span itemscope itemtype="' . $schema_link . '"><a itemprop="url" href="' . get_author_posts_url($userdata->ID) . '"></a><span itemprop="title">' . __('Author', 'rookie-startar') . ': "' . $userdata->display_name . '"</span>' . '</span>';
         }
         elseif (is_404()) {
-            echo  __('Error 404', 'rookie');
+            echo  __('Error 404', 'rookie-startar');
         }
 
         elseif (is_day()) {
@@ -137,7 +137,7 @@ function rookie_breadcrumb_lists() {
         if (get_query_var('paged')) {
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
                 echo ' (';
-                    echo __('Page', 'rookie') . ' ' . get_query_var('paged');
+                    echo __('Page', 'rookie-startar') . ' ' . get_query_var('paged');
                     if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
                         echo ')';
         }

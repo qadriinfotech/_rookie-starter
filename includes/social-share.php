@@ -6,7 +6,7 @@
  */
 
 
-function header_socials() { ?>
+function rookie_startar_header_socials() { ?>
 
 	<div class="top-bar-right social-style-font_icons" id="top-bar-social">
 		<?php $twitter = ro_get_option('twitter'); 
@@ -66,7 +66,7 @@ function header_socials() { ?>
 	</div><!-- #top-bar-social -->
 <?php }
 
-function post_socials() {
+function rookie_startar_post_socials() {
 	if (is_single()) {
 		global $post;
 		$permalink = get_permalink(get_the_ID());
@@ -111,7 +111,7 @@ function post_socials() {
 	}
 }
 
-function author_socials() { ?>
+function rookie_startar_author_socials() { ?>
 
 	<?php if (!empty ($author_socials_text) || ro_get_option('author_socials')) { ?>
 	<span class="author-social-bar-text"><?php echo ro_get_option ('author_socials_text'); ?></span>
@@ -154,7 +154,7 @@ function author_socials() { ?>
 	</ul> <!-- author-social-bar -->
 <?php } 
 
-function footer_socials() { ?>
+function rookie_startar_footer_socials() { ?>
 	<div id="footer-socials">
 		<div class="social-bar">
 			<div class="container-fluid clearfix">

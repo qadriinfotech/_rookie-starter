@@ -28,13 +28,13 @@
                 if (!empty ($url_text) && ro_get_option('url_text')) { ?>         
                 <span class="external-link">
                     <i class="fa fa-external-link"></i>
-                    <a itemprop="url" href="#"><span itemprop="name"><?php echo ro_get_option('url_text'); ?></span></a>
+                    <a itemprop="url" href="<?php echo esc_url( ro_get_option('custom_text_url') ); ?>"><span itemprop="name"><?php echo ro_get_option('url_text'); ?></span></a>
                 </span>
                 <?php } ?>
             </div><!-- #top-bar-content -->
 
             <?php if (ro_get_option('header_socials')) { ?>
-            <?php header_socials(); ?>
+            <?php rookie_startar_header_socials(); ?>
             <?php } ?>
         </div> <!-- .container -->
     </div> <!-- #top-bar -->

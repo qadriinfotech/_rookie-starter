@@ -380,31 +380,6 @@ img.alignleft {
   border-color: #eee
 }
 
-.hidden-xs .navbar-nav > .open > a, 
-.hidden-xs .navbar-nav > .open > a:focus, 
-.hidden-xs .navbar-nav > .open > a:hover,
-
-.hidden-xs .navbar-nav > .active > a, 
-.hidden-xs .navbar-nav > .active > a:focus, 
-.hidden-xs .navbar-nav > .active > a:hover,
-
-.hidden-xs .navbar-nav > li > a:focus, 
-.hidden-xs .navbar-nav > li > a:hover,
-
-.nav .open > a, 
-.nav .open > a:focus, 
-.nav .open > a:hover,
-
-.dropdown-menu > li > a:focus, 
-.dropdown-menu > li > a:hover,
-
-.dropdown-menu > .active > a, 
-.dropdown-menu > .active > a:focus, 
-.dropdown-menu > .active > a:hover {
-  background-color: #b2afe8;
-  color: #fff
-}
-
 .navbar-form input {
   min-width: 220px
 }
@@ -426,9 +401,9 @@ img.alignleft {
 }
 
 @media (max-width: 767px) {
-	table {
-	  table-layout: fixed;
-	}
+  table {
+    table-layout: fixed;
+  }
 }
 
 /* MOBILE MENU */
@@ -438,31 +413,31 @@ img.alignleft {
   overflow-y: auto
 }
 
-.visible-xs .navbar-collapse .navbar-nav > li a {
+#mobile-menu .navbar-collapse .navbar-nav > li a {
   color: #777;
   display: block;
   padding: 5px 10px;
   cursor: pointer
 }
 
-.visible-xs .navbar-nav > li a:hover,
-.visible-xs .navbar-nav > li a:focus,
-.visible-xs .navbar-nav > li a:active{
+#mobile-menu .navbar-nav > li a:hover,
+#mobile-menu .navbar-nav > li a:focus,
+#mobile-menu .navbar-nav > li a:active{
   background-color: #b2afe8;
   color: #fff
 }
 
-.visible-xs .navbar-collapse .navbar-nav > .active > a, 
-.visible-xs .navbar-collapse .navbar-nav > .active > a:focus, 
-.visible-xs .navbar-collapse .navbar-nav > .active > a:hover,
+#mobile-menu .navbar-collapse .navbar-nav > .active > a, 
+#mobile-menu .navbar-collapse .navbar-nav > .active > a:focus, 
+#mobile-menu .navbar-collapse .navbar-nav > .active > a:hover,
 
-.visible-xs .navbar-collapse .navbar-nav > li > a:focus, 
-.visible-xs .navbar-collapse .navbar-nav > li > a:hover {
+#mobile-menu .navbar-collapse .navbar-nav > li > a:focus, 
+#mobile-menu .navbar-collapse .navbar-nav > li > a:hover {
   background-color: #b2afe8;
   color: #fff
 }
 
-.visible-xs .navbar-collapse .navbar-nav ul {
+#mobile-menu .navbar-collapse .navbar-nav ul {
   list-style: none;
   padding: 5px 0 0 20px
 }
@@ -623,10 +598,9 @@ ul li span.menu-toggler {
 
 /* CONTENT */
 .single-featured {
-  -webkit-transition: opacity .3s linear;
-  transition: opacity .3s linear;
   display: block;
-  margin: auto
+  margin: auto;
+  transition: opacity 0.3s linear 0s
 }
 
 .single-featured:hover {
@@ -1085,7 +1059,6 @@ img.footer-logo {
 
 .footer-wrapper {
   border-top: 3px solid #b2afe8;
-  color: #aaa;
   padding: 20px;
   font-size: 13px
 }
@@ -1123,7 +1096,6 @@ img.footer-logo {
 }
 
 #footer-socials {
-  background: #222;
   margin: 0;
   padding: 0
 }
@@ -1135,14 +1107,12 @@ img.footer-logo {
 }
 
 .social-bar-text {
-  color: #aaa;
   margin-right: 5px;
   text-transform: uppercase;
   font-size: 12px
 }
 
 .social-bar a {
-  color: #aaa;
   border: 1px solid rgba(255,255,255,.07);
   border-radius: 50%;
   line-height: 26px;
@@ -1155,7 +1125,7 @@ img.footer-logo {
   -webkit-transition: all .9s ease 0s
 }
 
-.social-bar a:hover { color: #fff }
+.social-bar a:hover { color: #fff !important }
 .social-bar .twitter:hover { background: #00acee }
 .social-bar .facebook:hover { background: #3b559f }
 .social-bar .google_plus:hover { background: #dd4c39 }
@@ -1167,10 +1137,8 @@ img.footer-logo {
 .social-bar .rss:hover { background: #ffac3d }
 
 .footer-bottom-wrapper {
-  background: #111;
   font-size: 13px;
   padding: 10px 0;
-  color: #777;
 }
 
 .footer-nav ul {
@@ -1194,7 +1162,6 @@ img.footer-logo {
   padding-left: 8px;
   transition: all .4s ease 0s;
   -webkit-transition: all .2s ease 0s;
-  color: #777
 }
 
 .footer-nav li a:hover, 
@@ -1263,16 +1230,4 @@ img.footer-logo {
   .error-message {
     font-size: 30px
   }
-}
-
-/* SHORTCODES */
-ul.list-arrow {
-  padding-left: 20px
-}
-
-ul.list-arrow li:before {
-  content: "\f00c";
-  font-family: FontAwesome;
-  margin-right: 5px;
-  color: green
 }

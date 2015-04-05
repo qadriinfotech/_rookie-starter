@@ -22,12 +22,12 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s', 'rookie' ),
+				__( 'Continue reading %s', 'rookie-startar' ),
 				the_title( '<span class="screen-reader-text">', '</span>', false )
 				) );
 
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'rookie-startar' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
@@ -37,7 +37,7 @@
 			) );
 		?>
     	<?php if (ro_get_option ('post_socials')) { ?>
-    	<?php post_socials(); ?> 
+    	<?php rookie_startar_post_socials(); ?> 
     	<?php } ?>
 	</div><!-- .entry-content -->
 	
