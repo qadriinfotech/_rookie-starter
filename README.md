@@ -45,7 +45,7 @@ Third-Party Plugins:
 [Demo](http://starter.croti.com/)
 
 ## Changelog
-* 18-03-2015 [v1.0.6](https://github.com/abukwaik/_rookie-starter/blob/master/CHANGELOG.md#106)
+* 05-04-2015 [v1.0.3](https://github.com/abukwaik/_rookie-starter/blob/master/CHANGELOG.md#106)
 
 ## Credit
 
