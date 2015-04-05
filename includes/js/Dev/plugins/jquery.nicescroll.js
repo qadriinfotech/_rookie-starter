@@ -2318,13 +2318,15 @@
       var el = ("jquery" in dom) ? dom[0] : dom;
 
       if (name == 'mousewheel') {
-        if (window.addEventListener||'onwheel' in document) { // modern brosers & IE9 detection fix
-          self._bind(el, "wheel", fn, bubble || false);
+
+        if ("onwheel" in self.win) {
+          self._bind(el,"wheel",fn,bubble||false);
         } else {
           var wname = (typeof document.onmousewheel != "undefined") ? "mousewheel" : "DOMMouseScroll"; // older IE/Firefox
-          _modernWheelEvent(el, wname, fn, bubble || false);
-          if (wname == "DOMMouseScroll") _modernWheelEvent(el, "MozMousePixelScroll", fn, bubble || false); // Firefox legacy
+          _modernWheelEvent(el,wname,fn,bubble||false);
+        if (wname=="DOMMouseScroll") _modernWheelEvent(el,"MozMousePixelScroll",fn,bubble||false); // Firefox legacy
         }
+
       } else if (el.addEventListener) {
         if (cap.cantouch && /mouseup|mousedown|mousemove/.test(name)) { // touch device support
           var tt = (name == 'mousedown') ? 'touchstart' : (name == 'mouseup') ? 'touchend' : 'touchmove';
